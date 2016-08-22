@@ -1,0 +1,1000 @@
+  200  ls -l
+  201  vagrant halt
+  202  vagrant up
+  203  vagrant ssh
+  204  cd ..
+  205  cd www/Homestead
+  206  vagrant up
+  207  vagrant ssh
+  208  vagrant halt
+  209  vagrant provision
+  210  vagrant up
+  211  vagrant provision
+  212  vagrant ssh
+  213  php artisan
+  214  cd ..
+  215  cd sites/coretex
+  216  php artisan
+  217  laravel
+  218  cd www
+  219  ls -l
+  220  cd kortex
+  221  ls -l
+  222  subl .
+  223  cd www/Homestead
+  224  vagrant up
+  225  cd ..
+  226  cd sites/coretex
+  227  subl .
+  228  composer require way/generators --dev
+  229  php artisan
+  230  composer update
+  231  cd ..
+  232  cd Homestead
+  233  vagrant ssh
+  234  cd www/Homestead
+  235  vagrant up
+  236  cd ..
+  237  cd sites/coretex
+  238  subl .
+  239  php artisan controller:make PagesController
+  240  vagrant ssh
+  241  cd ..
+  242  cd Homestead
+  243  Vagrant ssh
+  244  vagrant ssh
+  245  cd ..
+  246  cd sites/coretex
+  247  subl .
+  248  gulp css
+  249  cd ..
+  250  cd Homestead
+  251  vagrant ssh
+  252  cd Homestead
+  253  cd sites/Homestead
+  254  ls -l
+  255  cd www/Homestead
+  256  ls -a
+  257  vagrant up
+  258  vagrant ssh
+  259  cd ..
+  260  cd sites/coretex
+  261  subl .
+  262  gulp
+  263  gulp css
+  264  cd .;
+  265  cd ..
+  266  cd www/Homestead
+  267  vagrant ssh
+  268  cd www/Homestead
+  269  vagrant up
+  270  cd www/Homestead
+  271  vagrant up
+  272  cd ..
+  273  cd sites/coretex
+  274  subl .
+  275  cd ..
+  276  cd..
+  277  cd ..
+  278  cd Homestead
+  279  vagrant ssh
+  280  cd ..
+  281  cd sites/coretex
+  282  composer require laracasts/validation
+  283  composer require laracasts/validation:1.1*
+  284  composer require laracasts/validation --prefer-dist 1.1*
+  285  composer require laracasts/validation --prefer-dist 1.1
+  286  php artisan key:generate
+  287  composer dumpautoload
+  288  composer require laracasts/validation --prefer-dist 1.1.2
+  289  composer dumpautoload
+  290  php -v
+  291  php artisan debug
+  292  php artisan env
+  293  cd ..
+  294  cd Homestead
+  295  vagrant ssh
+  296  vagrant halt
+  297  cd www/Homestead
+  298  vagrant up
+  299  cd ..
+  300  cd sites coretex
+  301  cd coretex
+  302  subl .
+  303  vendor/bin/codecept run functional
+  304  cd ..
+  305  cd Homestead
+  306  vagrant ssh
+  307  echo $PATH
+  308  ls -l
+  309  composer
+  310  composer global require "laravel/installer"
+  311  cd .composer
+  312  subl composer.json
+  313  export PATH=$PATH:~/.composer/vendor/bin
+  314  echo $PATH
+  315  cd ..
+  316  cd sites
+  317  cd www
+  318  cd sites
+  319  ls -l
+  320  laravel new strato
+  321  cd strato
+  322  ls -l
+  323  subl composer.json
+  324  subl .
+  325  cd ..
+  326  cd Homestead
+  327  vagrant up
+  328  vagrant provision
+  329  php artisan
+  330  cd ..
+  331  cd ??
+  332  cd sites/strato
+  333  php artisan
+  334  composer require way/generators --dev
+  335  php artisan
+  336  composer require laracasts/generators:dev-master
+  337  composer require laracasts/generators laracasts/generators:dev-master
+  338  composer require laracasts/generators 
+  339  composer require laracasts/generators:1.1.3
+  340  composer require laracasts/generators:dev-master
+  341  php artisan
+  342  cd ..
+  343  cd Homestead
+  344  vagrant ssh
+  345  homestead provision
+  346  vagrant up
+  347  homestead provision
+  348  vagrant up
+  349  vagrant ssh
+  350  vagrant reload --provision
+  351  cd ..
+  352  cd sites/strato
+  353  php artisan create:migration
+  354  php artisan make:migration create_test --create="test_table"
+  355  php artisan migrate
+  356  sudo apt-get install php5-mysql
+  357  php artisan migrate
+  358  php artisan controller:make PagesController
+  359  php artisan
+  360  php artisan make:controller PagesController
+  361  gulp -v
+  362  node -v
+  363  cd ..
+  364  cd Homestead
+  365  vagrant ssh
+  366  cd www/Homestead
+  367  vagrant up
+  368  cd ..
+  369  cd sites/strato
+  370  subl .
+  371  cd ..
+  372  cd www/Homestead
+  373  cd ~www/Homestead
+  374  cd ./www/Homestead
+  375  cd ..
+  376  ls -l
+  377  cd www/Homestead
+  378  vagrant ssh
+  379  cd ..
+  380  cd sites/strato
+  381  subl .
+  382  cd ./home
+  383  cd ..
+  384  cd Homestead
+  385  vagrant halt
+  386  vagrant up
+  387  cd ..
+  388  cd sites/strato
+  389  php artisan route:list
+  390  cd www/Homestead
+  391  vagrant up
+  392  cd ..
+  393  cd sites strato
+  394  subl .
+  395  cd strato
+  396  subl .
+  397  cd ..
+  398  cd Homestead
+  399  vagrant up
+  400  vagrant halt
+  401  vagrant up
+  402  vagrant ssh
+  403  vagrant halt
+  404  vagrant up
+  405  cd ..
+  406  cd sites/strato
+  407  ls -l
+  408  composer require laracasts/flash
+  409  cd ..
+  410  composer
+  411  composer install laravel
+  412  composer require laravel
+  413  composer install
+  414  ls -a
+  415  cd .composer
+  416  ls -l
+  417  subl composer.json
+  418  cd ..
+  419  echo PATH
+  420  echo $PATH
+  421  cd Homestead
+  422  cd /www/Homestead
+  423  cd www/Homestead
+  424  laravel
+  425  cd www/Homestead
+  426  vagrant ssh
+  427  composer global require "laravel/installer"
+  428  PATH=$PATH:~/.composer/vendor/bin
+  429  cd www/sites
+  430  ls -l
+  431  laravel
+  432  laravel new intam3lem
+  433  cd intam3lem
+  434  subl .
+  435  cd ..
+  436  cd Homestead
+  437  ls -l
+  438  vagrant up
+  439  vagrant ssh
+  440  vagrant provision
+  441  vagrant ssh
+  442  vagrant provision
+  443  cd ..
+  444  cd sites/strato
+  445  php artisan
+  446  php artisan tinker
+  447  echo zabi
+  448  php artisan tinker
+  449  subl .
+  450  cd ..
+  451  gulp
+  452  cd Homestead
+  453  vagrant ssh
+  454  cd www/Homestead
+  455  vagrant up
+  456  cd ..
+  457  cd sites/strato
+  458  subl .
+  459  composer
+  460  composer dump-autoload
+  461  php artisan make:migration create_statuses_table
+  462  php artisan migrate
+  463  cd ..
+  464  cd Homestead
+  465  vagrant halt
+  466  cd www/Homestead
+  467  vagrant up
+  468  cd ..
+  469  cd sites/strato
+  470  subl .
+  471  cd sites/Homestead
+  472  cd www/Homestead
+  473  vagrant up
+  474  cd ..
+  475  cd sites/strato
+  476  subl .
+  477  cd www/Homestead
+  478  vagrant up
+  479  cd ..
+  480  cd sites/strato
+  481  ls -l
+  482  subl .
+  483  php artisan make:migration create_comments_table
+  484  php artisan migrate
+  485  cd www/Homestead
+  486  vagrant up
+  487  cd ..
+  488  cd sites/Strato
+  489  cd sites/strato
+  490  subl .
+  491  cd www/Homestead
+  492  vagrant up
+  493  cd ..
+  494  cd sites/jokes
+  495  ps -aux
+  496  cd www/sites
+  497  laravel
+  498  composer create-project --prefer-dist laravel/laravel test
+  499  ls -l
+  500  composer create-project --prefer-dist laravel/laravel jokes
+  501  cd ..
+  502  cd sites/strato
+  503  cd ..
+  504  cd Homestead
+  505  vagrant up
+  506  vagrant halt
+  507  cd ..
+  508  cd sites/jokes
+  509  ls -l
+  510  cd app
+  511  ls -l
+  512  cd http
+  513  cd Http
+  514  ls -l
+  515  cd ..
+  516  php artisan
+  517  subl composer.json
+  518  composer require laracasts/generators --dev
+  519  subl .
+  520  php artisan
+  521  php artisan serve
+  522  cd www/sites/strato
+  523  subl .
+  524  cd www/Homestead
+  525  vagrant up
+  526  ps aux
+  527  ps aux | grep lib
+  528  ps aux
+  529  ps aux | grep hci0
+  530  cd ..
+  531  cd sites/jokes
+  532  php artisan serve
+  533  cd ..
+  534  cd Homestead
+  535  vagrant up
+  536  vagrant halt
+  537  cd ..
+  538  cd sites/jokes
+  539  php artisan serve
+  540  subl .
+  541  php artisan serve
+  542  cd ..
+  543  cd Homestead
+  544  vargrant up
+  545  vagrant up
+  546  vagrant provision
+  547  vagrant halt
+  548  vagrant provision
+  549  vagrant up
+  550  vagrant provision
+  551  pacman -S elixir
+  552  sudo apt-get install pacman
+  553  wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && sudo dpkg -i erlang-solutions_1.0_all.deb
+  554  sudo apt-get update
+  555  sudo apt-get install erlang
+  556  sudo apt-get install esl-erlang
+  557  sudo apt-get install libssl0.9.8
+  558  sudo apt-get install libssl
+  559  lsb_release -c
+  560  deb http://packages.erlang-solutions.com/ubuntu trusty contrib
+  561  wget http://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb
+  562  sudo dpkg -i erlang-solutions_1.0_all.deb
+  563  sudo apt-get update
+  564  sudo apt-get install erlang
+  565  gdebi
+  566  cd home/downloads
+  567  cd downloads
+  568  cd Downloads
+  569  gdebi esl-erlang_18.3-1-ubuntu-wily_amd64
+  570  gdebi esl-erlang_18.3-1-ubuntu-wily_amd64.deb
+  571  sudo gdebi esl-erlang_18.3-1-ubuntu-wily_amd64.deb
+  572  sudo apt-get install elixir
+  573  sudo apt-get update
+  574  sudo apt-get install elixir
+  575  sudo dpkg -i erlang-solutions_1.0_all.deb
+  576  cd ..
+  577  sudo dpkg -i erlang-solutions_1.0_all.deb
+  578  sudo apt-get update
+  579  sudo apt-get install elixir
+  580  cd Downloads
+  581  ls -l
+  582  gdebi elixir_1.2.3-1ubuntu-wily-amd64
+  583  gdebi elixir_1.2.3-1ubuntu-wily-amd64.deb
+  584  gdebi elixir_1.2.3-1-ubuntu-wily-amd64.deb
+  585  gdebi elixir_1.2.3-1-ubuntu-wily_amd64.deb
+  586  sudo gdebi elixir_1.2.3-1-ubuntu-wily_amd64.deb
+  587  dpgk elixir
+  588  dpkg exliri
+  589  dpkg
+  590  dpkg --help
+  591  dpkg -v elixir
+  592  dpkg -V elixir
+  593  dpkg -l elixir
+  594  dpkg -l erlang
+  595  dpkg -l esl-erlang
+  596  cd ..
+  597  mix
+  598  mix local.hex
+  599  sudo apt-get install esl-erlang
+  600  sudo apt-get install elixir
+  601  mix archive.install https://github.com/phoenixframework/archives/raw/master/phoenix_new.ez
+  602  npm
+  603  curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  604  sudo gedit /etc/apt/sources.list.d/google-chrome.list
+  605  sudo apt-get update
+  606  curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+  607  sudo apt-get install -y nodejs
+  608  dpkg -l nodejs
+  609  npm
+  610  dpkg -l | grep SQL
+  611  dpkg -l | grep Postgres
+  612  dpkg -l | grep Post
+  613  dpkg -l | grep PostgreSQL
+  614  sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+  615  wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add 
+  616  sudo apt-get install postgresql postgresql-contrib
+  617  sudo apt-get install inotify-tools
+  618  cd www/sites
+  619  mix phoenix.new --no-brunch phoenix_trello
+  620  npm init
+  621  cd phoenix_trello
+  622  npm init
+  623  npm i webpack --save-dev
+  624  gedit package.json
+  625  cd www/sites/phoenix-trello
+  626  cd www/sites
+  627  ls -l
+  628  cd phoenix_trello
+  629  ls -l
+  630  subl package.json
+  631  npm install
+  632  subl webpack.config.js
+  633  ls -l
+  634  subl webpack.config.js
+  635  cd config
+  636  ls -l
+  637  subl dev.exs
+  638  mix phoenix.server
+  639  cd ..
+  640  mix phoenix.server
+  641  ls -l
+  642  cd web
+  643  ls -l
+  644  cd static
+  645  ls -l
+  646  ls -a
+  647  cd ..
+  648  ls -l
+  649  cd static
+  650  mkdir css js
+  651  ls -l
+  652  cd css
+  653  subl application.sass
+  654  cd ..
+  655  cd js
+  656  subl application.js
+  657  cd ..
+  658  mix phoenix.server
+  659  cd web/static/js/store
+  660  cd web/static/js
+  661  ls -l
+  662  mkdir store
+  663  cd store
+  664  subl index.js
+  665  cd ..
+  666  ls -l
+  667  mkdir reducers
+  668  cd reducers
+  669  subl index.js
+  670  cd ..
+  671  cd reducers
+  672  subl session.js
+  673  cd ..
+  674  subl application.js
+  675  gdebi
+  676  gbedi erlang
+  677  gdebi elixir
+  678  dpkg elixir
+  679  dpkg -i elixir
+  680  sudo dpkg -i elixir
+  681  dpkg -l elixir
+  682  dpkg -l esl-erlang
+  683  dpkg -l esl-erlad
+  684  dpkg -l 
+  685  dpkg -l | grep node
+  686  dpkg -l | grep chrome
+  687  gedit etc/apt/sources.list.d
+  688  gedit etc/apt/sources.list
+  689  ls etc/apt/sources.list.d
+  690  cd www/sites/phoenix_trello
+  691  subl .
+  692  cd web/static
+  693  ls -l
+  694  rmdir kl
+  695  rmdir ouiuou
+  696  ls -l
+  697  dpkg -l | grep node
+  698  dpkg -l | grep npm
+  699  npm -v
+  700  node -v
+  701  cd ..
+  702  npm install
+  703  mix phoenix.server
+  704  cd www/sites
+  705  ls -l
+  706  cd ReduxSimpleStarter/
+  707  atom .
+  708  npm serve
+  709  npm start
+  710  cd www/sites/ReduxSimpleStarter/
+  711  atom .
+  712  npm start
+  713  npm
+  714  npm help start
+  715  npm restart
+  716  npm stop
+  717  npm help start
+  718  npm help stop
+  719  npm help start
+  720  cd www/sites/ReduxSimpleStarter/
+  721  npm start
+  722  npm instal --save lodash
+  723  npm install --save lodash
+  724  npm start
+  725  atom .
+  726  cd ..
+  727  cd ReactOnly/
+  728  npm start
+  729  cd ..
+  730  cd www/sites/ReactRedux/
+  731  atom .
+  732  npm start
+  733  cd ..
+  734  rm -f ReactRedux
+  735  rmdir ReactRedux
+  736  rmdir -f ReactRedux
+  737  rmdir --help
+  738  rmdir --ignore-fail-on-non-empty ReactRedux/
+  739  ls -l
+  740  rmdir --ignore-fail-on-non-empty ReactRedux/
+  741  ls -l
+  742  cd ReactRedux/
+  743  ls -l
+  744  git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
+  745  sudo git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
+  746  git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
+  747  cd ..
+  748  git clone git@github.com:StephenGrider/ReduxSimpleStarter.git
+  749  git clone https://github.com/StephenGrider/ReduxSimpleStarter
+  750  cd ReduxSimpleStarter/
+  751  npm install
+  752  npm start
+  753  atom .
+  754  cd www/sites/ | ls -l
+  755  cd www/sites
+  756  ls -l
+  757  cd ReduxSimpleStarter/
+  758  atom .
+  759  npm start
+  760  cd www/sites/ReduxSimpleStarter/
+  761  npm start
+  762  atom .
+  763  npm start
+  764  echo $PATH | tr : $'\n'
+  765  source
+  766  ls -l
+  767  cd www
+  768  ls -l
+  769  cd sites
+  770  ls -l
+  771  mkdir projectxyz
+  772  cd projectxyz/
+  773  ls -l
+  774  ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
+  775  sudo apt-get install ruby
+  776  ruby -e “$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)”
+  777  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  778  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  779  brew install rbenv ruby-build
+  780  brew help
+  781  echo 'export PATH="/home/sinxor/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+  782  brew
+  783  echo $PATH
+  784  echo 'export PATH="/home/sinxor/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+  785  echo ~/.bash_profile
+  786  gedit ~/.bash_profile
+  787  sudo apt-get install build-essential
+  788  brew
+  789  Brew help
+  790  gedit ~/.bashrc
+  791  gedit ~/.bash_profile
+  792  gedit ~/.bashrc
+  793  brew
+  794  gedit ~/.bashrc
+  795  source .bashrc
+  796  cd ..
+  797  ls -l
+  798  source .bashrc
+  799  brew
+  800  brew install rbenv ruby-build
+  801  echo ‘if which rbenv > /dev/null; then eval “$(rbenv init -)”; fi’ >> ~/.bash_profile
+  802  gedit ~/.bash_profile
+  803  gedit ~/.bashrc
+  804  rbenv install 2.3.0
+  805  echo $PATH | tr : $'\n'
+  806  rbenv
+  807  gedit ~/.bashrc
+  808  cd .rbenv/bin
+  809  cd .rbenv
+  810  ls -l
+  811  ls -a
+  812  cd bin
+  813  cd ..
+  814  cd .rbenv/plugins
+  815  echo ‘if which rbenv > /dev/null; then eval “$(rbenv init -)”; fi’ >> ~/.bash_profile
+  816  echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+  817  gedit ~/.bash_profile
+  818  gedot~echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bashrc
+  819  echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bashrc
+  820  rbenv install 2.3.0
+  821  rbenv install 2.3.1
+  822  apt-get install libffi-dev
+  823  sudo apt-get install libffi-dev
+  824  rbenv install 2.3.1
+  825  gedit /tmp/ruby-build.20160523172347.26840.log
+  826  openssl
+  827  apt-get install openssl
+  828  sudo apt-get install openssl
+  829  rbenv install 2.3.1
+  830  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt rbenv install 2.3.0 -v
+  831  rvm
+  832  sudo apt-get remove ruby
+  833  sudo apt-get update
+  834  sudo apt-get install build-essential
+  835  wget -O ruby-install-0.6.0.tar.gz https://github.com/postmodern/ruby-install/archive/v0.6.0.tar.gz
+  836  tar -xzvf ruby-install-0.6.0.tar.gz
+  837  cd ruby-install-0.6.0/
+  838  sudo make install
+  839  ruby-install -V
+  840  ruby-install --latest ruby 2.3.1
+  841  ruby -v
+  842  rvm
+  843  source ~/.rvm/scripts/rvm
+  844  rbenv
+  845  openssl -v
+  846  openssl version
+  847  zlib
+  848  dpkg -s zlib
+  849  dpkg -i
+  850  sudo dpkg -i
+  851  sudo dpkg -i | grep zlib
+  852  apt-get install autoconf
+  853  sudo apt-get install autoconf
+  854  dpkg -s autoconf
+  855  sudo apt-get install automake
+  856  dpkg -s automake
+  857  sudo apt-get install binutils
+  858  dpkg -s binutils
+  859  sudo apt-get install gcc
+  860  dpkg -s gcc
+  861  sudo apt-get install gconv-modules
+  862  sudo apt-get install zlib
+  863  ipkg
+  864  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt rbenv install 2.3.0 -v
+  865  openssl version
+  866  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt rbenv install 2.3.4 -v
+  867  rbenv install --list
+  868  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt rbenv install 2.4 -v
+  869  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt rbenv install 2.4.0-dev -v
+  870  rbenv install ruby 2.0.4-dev
+  871  rbenv install ruby 2.0.4
+  872  rbenv install ruby 2.4.0-de
+  873  rbenv install --list
+  874  rbenv install ruby 2.4.0-dev
+  875  rbenv install ruby -l
+  876  rbenv install 2.4.0-dev
+  877  gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+  878  \curl -sSL https://get.rvm.io | bash -s stable
+  879  gedit ~./profile
+  880  rvm get stable --autolibs=enable
+  881  rvm
+  882  gedit ~./profile
+  883  gedit ~./bash_profile
+  884  gedit ~/.bash_profile
+  885  soure .bash_profile
+  886  source .bash_profile
+  887  source /.bash_profile
+  888  source ~/.bash_profile
+  889  rvm
+  890  rvm get stable --autolibs=enable
+  891  rvm
+  892  rvm install ruby
+  893  gedit /tmp/ruby-build.20160523172347.26840.log
+  894  rvm pkg install zlib
+  895  rvm help autolibs
+  896  rvm pkg install openssl
+  897  rvm reinstall all --froce
+  898  rvm reinstall all --force
+  899  rvm install 2.3.1 --with-openssl-dir=$HOME/.rvm/usr
+  900  RUBY version
+  901  ruby version
+  902  ruby -v
+  903  rbenv global 2.3.1
+  904  rbenv
+  905  rbenv global
+  906  rbenv version
+  907  rbenv versions
+  908  rbenv which
+  909  rbenv which ruby
+  910  rbenv version ruby
+  911  gedit /home/sinxor/.rbenv/version
+  912  rvm version
+  913  ruby -v
+  914  rbenv global
+  915  rbenv global 2.3.1p112
+  916  rbenv global 2.3.1p
+  917  rbenv global 2.3.1
+  918  rbenv global 2.3.1-p112
+  919  rbenv rehash
+  920  rbenv global 2.3.1-p112
+  921  rbenv global 2.3.1
+  922  rbenv global 2.3.1p112
+  923  rbenv global 2.3
+  924  rbenv global
+  925  rbenv whence rackup
+  926  rvm implode
+  927  ruby -v
+  928  apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+  929  sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev
+  930  brew upgrade ruby-build
+  931  apt-get install libssl-dev
+  932  sudo apt-get install libssl-dev
+  933  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local rbenv install
+  934  RUBY_CONFIGURE_OPTS=--with-openssl-dir=/opt/local rbenv install 2.3.1
+  935  apt-get remove openssl
+  936  sudo apt-get remove openssl
+  937  brew
+  938  sudo apt-get install build-essential curl git python-setuptools ruby
+  939  brew
+  940  brew uninstall openssl
+  941  brew install openssl
+  942  brew uninstall openssl
+  943  brew upgrade
+  944  brew install openssl
+  945  ruby-install ruby 2.1.3 -- --with-openssl-dir=`brew --prefix openssl`
+  946  ruby-install ruby 2.3.1 -- --with-openssl-dir=`brew --prefix openssl`
+  947  rbenv global
+  948  rbenv
+  949  rbenv local
+  950  rbenv global 2.3.1
+  951  ruby -v
+  952  rbenv version
+  953  rbenv versions
+  954  rbenv whence
+  955  rbenv which
+  956  rbenv whence which
+  957  rbenv commands
+  958  rbenv rehash
+  959  rbenv global
+  960  rbenv --version
+  961  ruby -v
+  962  rbenv local 2.3.1
+  963  rbenv global 2.3.1
+  964  sudo rbenv global
+  965  rbenv global system
+  966  rbenv global
+  967  ruby -v
+  968  rbenv global 2.1.5
+  969  rbenv global 2.1.5p273
+  970  rbenv global 2.1.5-p273
+  971  ruby-install ruby 2.3.1 -- --with-openssl-dir=`brew --prefix openssl`
+  972  ruby-install 
+  973  ruby-install help
+  974  CONFIGURE_OPTS="--with-openssl-dir=`brew --prefix openssl`" rbenv install 2.3.1
+  975  rbenv global
+  976  rbenv global 2.3.1
+  977  rbenv global
+  978  rbenv rehash
+  979  rbenv global
+  980  ruby -v
+  981  gem install rails
+  982  gem install rails -v 4.2.6
+  983  rbenv rehash
+  984  rails -v
+  985  brew install postgresql
+  986  brew install libperl
+  987  brew update
+  988  brew doctor
+  989  echo 'export PATH="/home/sinxor/.linuxbrew/sbin:$PATH"' >> ~/.bash_profile
+  990  gedit ~/.bash_profile
+  991  brew doctor
+  992  echo 'export PATH="/home/sinxor/.linuxbrew/sbin:$PATH"' >> ~/.bashrc
+  993  brew doctor
+  994  brew install postgresql --with-perl
+  995  brew install perl
+  996  brew install postgresql 
+  997  initdb /usr/local/var/postgres -E utf8
+  998  sudo initdb /usr/local/var/postgres -E utf8
+  999  sudo mkdir /usr/local/var/postgres
+ 1000  sudo chmod 775 /usr/local/var/postgres
+ 1001  sudo mkdir /usr/local/var/postgres
+ 1002  cd..
+ 1003  cd ..
+ 1004  source .bash_profile
+ 1005  cd 
+ 1006  source ~/.bash_profile
+ 1007  cd
+ 1008  source ~/.bash_profile
+ 1009  cd
+ 1010  cd www
+ 1011  cd ..
+ 1012  cd /usr/local
+ 1013  cd var/
+ 1014  sudo mkdir /usr/local/var/postgres
+ 1015  sudo mkdir /usr/local/var
+ 1016  sudo mkdir /usr/local/var/postgres
+ 1017  sudo chmod 775 /usr/local/var/postgres/
+ 1018  sudo chown sinxor /usr/local/var/postgres/
+ 1019  initdb /usr/local/var/postgres/
+ 1020  gem install lunchy
+ 1021  gem update --system
+ 1022  gem install lunchy
+ 1023  gem update --system
+ 1024  gem
+ 1025  gem -v
+ 1026  gedit /etc/hosts
+ 1027  sudo gedit /etc/hosts
+ 1028  gem list --remote passenger --verbose
+ 1029  sudo gem update --system
+ 1030  gem install lunchy
+ 1031  psql --version
+ 1032  mkdir -p ~/Library/LaunchAgents
+ 1033  cp /usr/local/Cellar/postgresql/9.5.2/homebrew.mxcl.postgresql.plist ~/Library/LaunchAgents/
+ 1034  ls -l
+ 1035  ls -a
+ 1036  lunchy ls
+ 1037  lunchy
+ 1038  lunchy show postgres
+ 1039  lunchy show postgresql
+ 1040  cd Cellar
+ 1041  sudo -u postgres psql postgres
+ 1042  sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+ 1043  wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+ 1044  sudo apt-get update
+ 1045  sudo apt-get install postgresql-common
+ 1046  sudo sh -c "echo 'deb http://apt.postgresql.org/pub/repos/apt/ xenial-pgdg main' > /etc/apt/sources.list.d/pgdg.list"
+ 1047  wget --quiet -O - http://apt.postgresql.org/pub/repos/apt/ACCC4CF8.asc | sudo apt-key add -
+ 1048  sudo apt-get update
+ 1049  sudo apt-get install postgresql-common
+ 1050  sudo apt-get install postgresql-9.5 libpq-dev
+ 1051  sudo -u postgres createuser sinxor -s
+ 1052  sudo -u postgres psql
+ 1053  postgres 
+ 1054  brew install elasticsearch17
+ 1055  brew 
+ 1056  brew install elasticsearch17
+ 1057  cd www/
+ 1058  cd sites
+ 1059  ls -l
+ 1060  rails new sin -d postgresql
+ 1061  rails -v
+ 1062  ruby -v
+ 1063  gem install rails -v 4.2.6
+ 1064  history
+ 1065  rbenv rehash
+ 1066  gem install rails -v 4.2.6
+ 1067  rails new sin -T --database=postgresql
+ 1068  cd sin
+ 1069  cd ..
+ 1070  curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash 
+ 1071  sudo apt-get install nodejs
+ 1072  node -v
+ 1073  rails new sin -T --database=postgresql
+ 1074  rails new sinz -T --database=postgresql
+ 1075  rbenv rehash
+ 1076  rails -v
+ 1077  rails new sinzo -T --database=postgresql
+ 1078  cd sinzo
+ 1079  clear
+ 1080  git
+ 1081  atom .
+ 1082  bundle
+ 1083  gem install diff-lcs -v '1.2.5'
+ 1084  bundle
+ 1085  gem install diff-lcs -v '1.2.5'
+ 1086  bundle
+ 1087  rake db:create
+ 1088  psql --sinxor=postgres
+ 1089  psql
+ 1090  sudo -u postgres psql
+ 1091  rake db:create
+ 1092  rails g
+ 1093  rails g rspec:install
+ 1094  rake
+ 1095  espec
+ 1096  rspec
+ 1097  rake db:create
+ 1098  sudo -u postgres psql
+ 1099  sudo -u postgres psql
+ 1100  cd ~/var
+ 1101  rake db:create
+ 1102  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+ 1103  rake db:create
+ 1104  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+ 1105  rake db:create
+ 1106  sudo psql -u rails -d sinzo
+ 1107  sudo psql -U rails -d sinzo
+ 1108  ps aux | grep postgresql
+ 1109  rake db:create
+ 1110  sudo -u postgres psql
+ 1111  rake db:create
+ 1112  rails server
+ 1113  rake db:create
+ 1114  rspe
+ 1115  rspec
+ 1116  rails g
+ 1117  rails g migration create_posts
+ 1118  rake db:migrate
+ 1119  rspec
+ 1120  rails server
+ 1121  history
+ 1122  gem install devise -v '3.5.3'
+ 1123  bundle
+ 1124  gem install datbase_cleaner -v '1.5.3'
+ 1125  gem install database_cleaner -v '1.5.3'
+ 1126  bundle
+ 1127  rails generate devise:install
+ 1128  rails g
+ 1129  history
+ 1130  rails g
+ 1131  rails generate devise:install
+ 1132  rails generate devise:controllers
+ 1133  rails generate devise:user
+ 1134  rails generate devise user
+ 1135  rake db:migrate
+ 1136  rails g devise:views
+ 1137  rails server
+ 1138  rails g
+ 1139  rspec
+ 1140  rspec spec/features/user_signup_spec.rb 
+ 1141  bundle
+ 1142  rspec spec/features/user_signup_spec.rb 
+ 1143  bundle
+ 1144  rspec spec/features/user_signup_spec.rb 
+ 1145  rails console
+ 1146  rspec spec/features/user_signup_spec.rb 
+ 1147  rails server
+ 1148  rspec spec/features/user_signup_spec.rb 
+ 1149  rails server
+ 1150  rspec spec/features/user_signup_spec.rb 
+ 1151  rails server
+ 1152  rspec spec/features/user_signup_spec.rb 
+ 1153  rails server
+ 1154  rspec spec/features/user_signup_spec.rb 
+ 1155  ls -l
+ 1156  cd www/
+ 1157  ls -l
+ 1158  cd sites
+ 1159  ls -l
+ 1160  cd sinzo
+ 1161  atom .
+ 1162  gem install bootstrap-sass -v 3.3.6
+ 1163  tracert
+ 1164  trace
+ 1165  trc
+ 1166  sudo apt-get install traceroute
+ 1167  traceroute https://api.rubygems.org/quick/Marshal.4.8/bootstrap-sass-3.3.6.gemspec.rz
+ 1168  traceroute https://api.rubygems.org/
+ 1169  gem install bootstrap-sass -v 3.3.6
+ 1170  gem update --system
+ 1171  gem outdated
+ 1172  gem install bootstrap-sass -v 3.3.6
+ 1173  bundle install
+ 1174  rails server
+ 1175  spec spec/controllers/posts_controller_spec.rb
+ 1176  rspec spec/controllers/posts_controller_spec.rb
+ 1177  rails server
+ 1178  rspec spec/controllers/posts_controller_spec.rb
+ 1179  rspec /spec/features/user_creates_post_spec.rb
+ 1180  rspec spec/controllers/posts_controller_spec.rb
+ 1181  rspec /spec/features/user_creates_post_spec.rb
+ 1182  rspec /spec/features/sign_in.rb
+ 1183  rspec spec/controllers/posts_controller_spec.rb
+ 1184  rspec spec/features/user_creates_post_spec.rb
+ 1185  rails server
+ 1186  rails g
+ 1187  rails generate migration add_user_id_to_posts
+ 1188  rake db:migrate
+ 1189  rails server
+ 1190  rails console
+ 1191  rails server
+ 1192  rails console
+ 1193  rails server
+ 1194  history
+ 1195  cd www/sites/sinzo
+ 1196  atom .
+ 1197  gem install bootstrap-sass -v 3.3.6
+ 1198  bundle install
+ 1199  history > history.txt
