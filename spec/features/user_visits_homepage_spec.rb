@@ -1,4 +1,4 @@
-require "rails_helper"
+"rails_helper"
 
 RSpec.feature "User visits homepage" do
   scenario "successfully and sees a logo" do
