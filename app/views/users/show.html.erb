@@ -1,3 +1,4 @@
 <%= @user.username %>
 <%= @user.description %>
+<%= image_tag @user.avatar.url if @user.avatar? %>
 <%= link_to "Edit", edit_user_path(@user) %>

@@ -12,6 +12,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick', '3.8.0'
+gem 'fog',  '1.23.0'
+gem 'net-ssh'
 gem 'devise', '~> 3.5.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 # bundle exec rake doc:rails generates the API under doc/api.
@@ -47,4 +51,8 @@ group :test do
   gem 'database_cleaner', '~> 1.5.1'
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'faker', '~> 1.6.1'
+end
+
+group :production do
+  gem 'rails_12factor', '0.0.2'
 end
