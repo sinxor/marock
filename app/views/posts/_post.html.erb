@@ -1,4 +1,15 @@
-<div class="post">
-  <small><%= post.username %> posted <%= time_ago_in_words(post.created_at) %> ago</small>
-  <%= link_to post.title, post %>
+<div class="post-panel">
+  <div class="metadata">
+    <%= avatar_for post.user, size: 40 %>
+    <div class="post-info">
+      <%= link_to post.username, post.user %><br/>
+      <small><%= time_ago_in_words(post.created_at) %> ago &#149; <%= post_length_in_minutes(post.body) %></small>
+    </div>
+  </div>
+
+  <div class="main-body">
+    <h3 class="post-title"><%= link_to post.title, post %></h3>
+    <div class="post-body"><%= post.body %></div>
+  </div>
+
 </div>
