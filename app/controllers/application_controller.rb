@@ -15,4 +15,9 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
        request.env['omniauth.origin'] || stored_location_for(resource) || dashboard_url
     end
+    def current_user?(user)
+      current_user.id == user.id
+    end
+
+    helper_method :current_user?
 end
