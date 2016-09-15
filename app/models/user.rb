@@ -8,7 +8,9 @@ class User < ActiveRecord::Base
                              presence: true
 
   validate :avatar_image_size
+  
   has_many :posts, dependent: :destroy
+  has_many :responses, dependent: :destroy
 
 
   include UserFollowing
