@@ -15,6 +15,11 @@ class User < ActiveRecord::Base
   has_many :liked_posts, through: :likes, source: :likeable, source_type: "Post"
   has_many :liked_responses, through: :likes, source: :likeable, source_type: "Response"
 
+  has_many :bookmarks
+  has_many :bookmarked_posts, through: :bookmarks, source: :bookmarkable, source_type: "Post"
+  has_many :bookmarked_responses, through: :bookmarks, source: :bookmarkable, source_type: "Response"
+
+
   include UserFollowing
   include TagFollowing
 
@@ -37,6 +42,21 @@ class User < ActiveRecord::Base
     liked_response_ids.include?(response.id)
   end
 
+  def add_bookmark_to(bookmarkable_obj)
+    bookmarks.where(bookmarkable: bookmarkable_obj).first_or_create
+  end
+
+  def remove_bookmark_from(bookmarkable_obj)
+    bookmarks.where(bookmarkable: bookmarkable_obj).destroy_all
+  end
+
+  def bookmarked_post?(post)
+    bookmarked_post_ids.include?(post.id)
+  end
+
+  def bookmarked_response?(response)
+    bookmarked_response_ids.include?(response.id)
+  end
 
   private
 

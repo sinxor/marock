@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   resources :posts, except: [:index] do
     resources :responses, only: [:create]
     resources :likes, only: [:create, :destroy], module: :posts
+    resources :bookmarks, only: [:create, :destroy], module: :posts
   end
 
   resources :responses, only: [] do
     resources :likes, only: [:create, :destroy], module: :responses
+    resources :bookmarks, only: [:create, :destroy], module: :responses
   end
   resources :tags, only: [:show]
   resources :relationships, only: [:create, :destroy]
