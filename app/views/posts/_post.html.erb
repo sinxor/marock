@@ -6,4 +6,7 @@
     <div class="post-body"><%= post.body %></div>
   </div>
 
+  <div id="post_<%= post.id %>_likes">
+    <%= render partial: 'posts/likes', locals: { post: post } %>
+  </div>
 </div>
