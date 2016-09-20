@@ -5,14 +5,16 @@
     <h3 class="title"><%= @post.title %></h3>
     <p class="body"><%= @post.body %></p>
 
+    <div class="post-stats clearfix">
+      <div id="post_<%= @post.id %>_likes" class="pull-left">
+        <%= render partial: 'posts/likes', locals: { post: @post } %>
+      </div>
 
-    <div id="post_<%= @post.id %>_likes">
-      <%= render partial: 'posts/likes', locals: { post: @post } %>
+      <div id="post_<%= @post.id %>_bookmarks" class="pull-right">
+        <%= render partial: 'posts/bookmarks', locals: { post: @post } %>
+      </div>
     </div>
 
-    <div id="post_<%= @post.id %>_bookmarks">
-      <%= render partial: 'posts/bookmarks', locals: { post: @post } %>
-    </div>
     <div class="post-tags">
       <% @post.tags.each do |tag| %>
         <%= link_to tag.name, tag, class: 'tag' %>
@@ -34,7 +36,9 @@
     <% end %>
 
     <% if @post.responses.any? %>
-      <%= render @post.responses %>
+      <div id="responses">
+        <%= render @post.responses %>
+      </div>
     <% end %>
   </div>
 </div>
