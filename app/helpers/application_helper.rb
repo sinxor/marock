@@ -12,7 +12,7 @@ module ApplicationHelper
      render 'shared/follow_button'
    end
  end
- 
+
  def follow_tag_button_for(tag)
     if user_signed_in?
       if current_user.following_tag?(tag)
@@ -23,5 +23,12 @@ module ApplicationHelper
     else
       render 'shared/follow_tag_button'
     end
+  end
+
+  def nav_link_to(text, url, options = {})
+    options[:class] ||= ""
+    options[:class] += " active" if current_page?(url)
+    options[:class].strip!
+    link_to text, url, options
   end
 end
