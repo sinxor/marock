@@ -6,6 +6,10 @@
   span[class^='icon'] {
     color: $accent-color;
     font-size: 18px;
+    &:hover,
+    &:active {
+      color: $light-font-color;
+    }
   }
 }
 
