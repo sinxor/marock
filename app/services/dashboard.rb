@@ -1,5 +1,5 @@
 class Dashboard
-  attr_reader :tag
+  attr_reader :tag, :filter
 
   def initialize(user: nil, filter: nil, tag: nil )
     @user = user
@@ -7,21 +7,23 @@ class Dashboard
     @tag = tag
   end
 
-  def posts
-    if @tag
-      return Post.tagged_with(@tag.name)
-    end
+  def tag_posts
+    Post.tagged_with(@tag.name)
+  end
 
+  def filtered_posts
     case @filter
     when :bookmarks
       return @user.bookmarked_posts
     end
+  end
 
-    if @user
-      return Feed.new(@user)
-    else
-      return Post.all.limit(8)
-    end
+  def posts
+    Post.all.limit(8)
+  end
+
+  def feed
+    Feed.new(@user)
   end
 
   def featured_tags
@@ -29,10 +31,22 @@ class Dashboard
   end
 
   def following_tags
-    @user.following_tags
+    @user.following_tags unless @user.nil?
   end
 
   def new_post
     Post.new
+  end
+
+  def filtered?
+    !@filter.nil?
+  end
+
+  def with_tag?
+    !@tag.nil?
+  end
+
+  def non_filtered?
+    @filter.nil? && @tag.nil?
   end
 end
