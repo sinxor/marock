@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!, only: [:bookmarks]
+  before_action :check_for_admin, only: [:show]
   def show
     if user_signed_in?
       @dashboard = Dashboard.new(user: current_user)
@@ -11,4 +12,9 @@ class DashboardsController < ApplicationController
     @dashboard = Dashboard.new(user: current_user, filter: :bookmarks)
     render :show
   end
+  private
+
+    def check_for_admin
+      redirect_to admin_dashboard_url if admin_signed_in?
+    end
 end

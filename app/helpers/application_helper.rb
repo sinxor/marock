@@ -11,9 +11,9 @@ module ApplicationHelper
    else
      render 'shared/follow_button'
    end
- end
+  end
 
- def follow_tag_button_for(tag)
+  def follow_tag_button_for(tag)
     if user_signed_in?
       if current_user.following_tag?(tag)
         render partial: 'shared/unfollow_tag_button', locals: { tag: tag }
@@ -22,6 +22,14 @@ module ApplicationHelper
       end
     else
       render partial: 'shared/follow_tag_button', locals: { tag: tag }
+    end
+  end
+
+  def feature_tag_button_for(tag)
+    if tag.featured?
+      render partial: 'admin/unfeature_tag_button', locals: { tag: tag }
+    else
+      render partial: 'admin/feature_tag_button', locals: { tag: tag }
     end
   end
 

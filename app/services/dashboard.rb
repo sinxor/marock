@@ -27,13 +27,15 @@ class Dashboard
   end
 
   def featured_tags
-    Tag.all.limit(8) # TODO: Change this to something like Tag.where(featured: true)
+    Tag.where(featured: true)
   end
 
   def following_tags
     @user.following_tags unless @user.nil?
   end
-
+  def all_tags
+    Tag.all.limit(50)
+  end
   def new_post
     Post.new
   end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :admins, controllers: { sessions: 'admin/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions' }
   root "dashboards#show"
   resources :users, only: [:show, :edit, :update]
   resources :posts, except: [:index] do
@@ -18,6 +19,10 @@ Rails.application.routes.draw do
   resources :interests, only: [:create, :destroy]
   resource :dashboard, only: [:show]
   get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
+  namespace :admin do
+    resource :dashboard, only: [:show]
+    resources :featured_tags, only: [:create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

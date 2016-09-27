@@ -9,7 +9,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body class="<%= controller.controller_name %> <%= controller.action_name %>">
-  <%= render 'layouts/header' %>
+  <% if admin_signed_in? %>
+    <%= render 'layouts/admin_header' %>
+  <% else %>
+    <%= render 'layouts/header' %>
+  <% end %>
   <%= render 'layouts/alert_messages' %>
 
   <div class="container-fluid">
