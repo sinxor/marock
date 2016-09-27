@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
-  has_many :responses, dependent: :destroy
+  has_many :responses, -> { order(created_at: :desc) }, dependent: :destroy
   has_many :likes, as: :likeable
   has_many :likers, through: :likes, source: :user
   has_many :bookmarks, as: :bookmarkable
@@ -13,8 +13,10 @@ class Post < ActiveRecord::Base
 
   delegate :username, to: :user
 
-  default_scope { order(created_at: :desc) }
+
   scope :latest, ->(number) { order(created_at: :desc).limit(number) }
+  scope :top_stories, ->(number) { order(likes_count: :desc).limit(number) }
+
 
   mount_uploader :picture, PictureUploader
 

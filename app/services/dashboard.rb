@@ -15,6 +15,8 @@ class Dashboard
     case @filter
     when :bookmarks
       return @user.bookmarked_posts
+    when :top_stories
+      return Post.top_stories(5)
     end
   end
 
@@ -33,11 +35,17 @@ class Dashboard
   def following_tags
     @user.following_tags unless @user.nil?
   end
+
   def all_tags
     Tag.all.limit(50)
   end
+
   def new_post
     Post.new
+  end
+
+  def top_stories
+    Post.top_stories(5)
   end
 
   def filtered?

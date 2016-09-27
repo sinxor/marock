@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :interests, only: [:create, :destroy]
   resource :dashboard, only: [:show]
   get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
+  get "top-stories" => "dashboards#top_stories", as: :top_stories
   namespace :admin do
     resource :dashboard, only: [:show]
     resources :featured_tags, only: [:create, :destroy]
