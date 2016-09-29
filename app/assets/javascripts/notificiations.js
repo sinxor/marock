@@ -1,15 +1,33 @@
-function notificationsInitialize() {
-
-  $notifications = $('#notifications');
-  $dropdown = $('#notification-items');
-  $bell = $('#bell');
-
-  $unreadCount = $('<span id="unread-notifications-count"></span>');
+$unreadCount = $('<span id="unread-notifications-count"></span>');
 
 
-  var renderNotifications = function(data) {
+var Notification = {
+
+  setup: function() {
+    if ($('#notifications').length > 0) {
+      Notification.getNewNotifications();
+
+      setInterval(function() {
+        Notification.getNewNotifications();
+      }, 5000);
+
+      $('#notifications').click(Notification.markAsRead);
+    }
+  },
+
+  getNewNotifications: function() {
+    $.ajax({
+      url: "/api/notifications.json",
+      dataType: "JSON",
+      method: "GET",
+      success: Notification.render
+    });
+  },
+
+  render: function(data) {
     console.log(data);
     var itemContent, imageTag;
+    var unreadCounter = 0;
 
     var items = $.map(data, function(notification) {
       switch(notification.type) {
@@ -24,49 +42,41 @@ function notificationsInitialize() {
           break;
       }
       imageTag = '<img width="35" class="avatar-image" src="' + notification.actor_avatar + '"/>';
+      cssClass = (notification.unread) ? 'new-notification' : '';
+      if (notification.unread) {
+        unreadCounter++;
+      }
 
-      return '<li><a href="' + notification.url + '">' + imageTag + itemContent + '</a></li>';
+      return '<li class="' + cssClass + '"><a href="' + notification.url + '">' + imageTag + '<div class="notification-metadata">' + itemContent + '</br><small>' + notification.time_ago + '</small></div></a></li>';
     });
 
-
     if (items.length > 0) {
-      $dropdown.html(items.join(' '));
-      $unreadCount.text(items.length);
-      $bell.after($unreadCount);
-      $bell.hide();
-      $notifications.addClass('active');
+      $('#notification-items').html(items.join(' '));
+      if (unreadCounter > 0) {
+        $unreadCount.text(unreadCounter);
+        $('#bell').after($unreadCount);
+        $('#bell').hide();
+        $('#notifications').addClass('active');
+      }
     } else {
-      $dropdown.html("<li><a>No notifications yet</a></li>");
+      $('#notification-items').html("<li><a>No notifications yet</a></li>");
     }
-  };
+  },
 
-  var markAsRead = function() {
+  markAsRead: function() {
     $.ajax({
       url: '/api/notifications/mark_as_read',
       method: 'POST',
       dataType: 'JSON',
       success: function() {
-        $bell.show();
-        $notifications.removeClass('active');
+        $('#bell').show();
+        $('#notifications').removeClass('active');
         $unreadCount.hide();
       }
-    });
-  };
-
-  /** Click handler to clear notifications **/
-  $notifications.click(markAsRead);
-
-
-  if ($notifications.length > 0) {
-    $.ajax({
-      url: "/api/notifications.json",
-      dataType: "JSON",
-      method: "GET",
-      success: renderNotifications
     });
   }
 }
 
 
-$(document).ready( notificationsInitialize );
-$(document).on( 'page:load', notificationsInitialize );
+$(document).ready( Notification.setup );
+$(document).on( 'page:load', Notification.setup );

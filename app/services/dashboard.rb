@@ -25,7 +25,10 @@ class Dashboard
   end
 
   def feed
-    Feed.new(@user)
+
+      Feed.new(@user)
+
+  
   end
 
   def featured_tags
