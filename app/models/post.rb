@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+  class Post < ActiveRecord::Base
 
   validates :title, :body, :user_id, presence: true
 
@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   has_many :responses, -> { order(created_at: :desc) }, dependent: :destroy
+  has_many :responders, through: :responses, source: :user
   has_many :likes, as: :likeable
   has_many :likers, through: :likes, source: :user
   has_many :bookmarks, as: :bookmarkable
@@ -13,7 +14,7 @@ class Post < ActiveRecord::Base
 
   delegate :username, to: :user
 
-
+  
   scope :latest, ->(number) { order(created_at: :desc).limit(number) }
   scope :top_stories, ->(number) { order(likes_count: :desc).limit(number) }
 
