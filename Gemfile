@@ -29,6 +29,9 @@ gem 'elasticsearch-rails', '~> 0.1.8'
 # Background Job
 gem 'sidekiq', '~> 4.0'
 
+gem 'sinatra', require: false
+gem 'slim'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
