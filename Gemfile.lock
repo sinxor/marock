@@ -197,6 +197,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (2.16.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -344,6 +345,7 @@ DEPENDENCIES
   net-ssh
   pg (~> 0.15)
   poltergeist (~> 1.8)
+  puma (~> 2.15)
   rails (= 4.2.6)
   rails_12factor (= 0.0.2)
   rspec-rails (~> 3.5)

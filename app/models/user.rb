@@ -18,40 +18,16 @@ class User < ActiveRecord::Base
   has_many :bookmarks
   has_many :bookmarked_posts, through: :bookmarks, source: :bookmarkable, source_type: "Post"
   has_many :bookmarked_responses, through: :bookmarks, source: :bookmarkable, source_type: "Response"
-  has_many :notifications, foreign_key: :recipient_id
+
+  has_many :notifications, dependent: :destroy, foreign_key: :recipient_id
+
+  after_destroy :clear_notifications
 
   include UserFollowing
   include TagFollowing
   mount_uploader :avatar, AvatarUploader
 
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
-
-  settings index: { number_of_shards: 1 } do
-    mappings dynamic: 'false' do
-      indexes :username, analyzer: 'english'
-      indexes :email
-    end
-  end
-
-  def self.search(term)
-    __elasticsearch__.search(
-      {
-        query: {
-          multi_match: {
-            query: term,
-            fields: ['username^10', 'email']
-          }
-        }
-      }
-    )
-  end
-
-  def as_indexed_json(options ={})
-    self.as_json({
-      only: [:username, :email]
-    })
-  end
+  include SearchableUser
 
   def add_like_to(likeable_obj)
     likes.where(likeable: likeable_obj).first_or_create
@@ -90,7 +66,14 @@ class User < ActiveRecord::Base
     def downcased_class_name(obj)
       obj.class.to_s.downcase
     end
+
+    # Clears notifications where deleted user is the actor.
+    def clear_notifications
+      Notification.where(actor_id: self.id).destroy_all
+    end
 end
+
+
 # Delete the previous users index in Elasticsearch
 User.__elasticsearch__.client.indices.delete index: User.index_name rescue nil
 

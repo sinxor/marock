@@ -32,9 +32,6 @@ gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -66,4 +63,5 @@ end
 group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
+  gem 'puma', '~> 2.15'
 end

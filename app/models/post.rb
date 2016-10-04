@@ -17,53 +17,13 @@ class Post < ActiveRecord::Base
 
   delegate :username, to: :user
 
-  default_scope { order(created_at: :desc) }
-  scope :latest, ->(number) { order(created_at: :desc).limit(number) }
-  scope :top_stories, ->(number) { order(:likes_count).limit(number) }
+  scope :recent, -> { order(created_at: :desc) }
+  scope :latest, ->(number) { recent.limit(number) }
+  scope :top_stories, ->(number) { order(likes_count: :desc).limit(number) }
 
   mount_uploader :picture, PictureUploader
 
-  include Elasticsearch::Model
-
-  # Sync up Elasticsearch with PostgreSQL.
-  after_save    :index_document
-  after_destroy :delete_document
-
-  settings index: { number_of_shards: 1 } do
-    mappings dynamic: 'false' do
-      indexes :title, analyzer: 'english'
-      indexes :body, analyzer: 'english'
-      indexes :tags do
-        indexes :name, analyzer: 'english'
-      end
-      indexes :user do
-        indexes :username, analyzer: 'english'
-      end
-    end
-  end
-
-  def self.search(term)
-    __elasticsearch__.search(
-      {
-        query: {
-          multi_match: {
-            query: term,
-            fields: ['title^10', 'body', 'user.username^5', 'tags.name^5']
-          }
-        }
-      }
-    )
-  end
-
-  def as_indexed_json(options = {})
-    self.as_json({
-      only: [:title, :body],
-      include: {
-        user: { only: :username },
-        tags: { only: :name }
-      }
-    })
-  end
+  include SearchablePost
 
   def self.tagged_with(name)
     Tag.find_by!(name: name).posts
@@ -78,16 +38,8 @@ class Post < ActiveRecord::Base
   def all_tags
     tags.map(&:name).join(", ")
   end
-  private
 
-    def index_document
-      PostIndexJob.perform_later('index', self.id)
-    end
-
-    def delete_document
-      PostIndexJob.perform_later('delete', self.id)
-    end
-  end
+end
 
 # Delete the previous posts index in Elasticsearch
 Post.__elasticsearch__.client.indices.delete index: Post.index_name rescue nil
@@ -98,4 +50,4 @@ Post.__elasticsearch__.client.indices.create \
   body: { settings: Post.settings.to_hash, mappings: Post.mappings.to_hash }
 
 # Index all post records from the DB to Elasticsearch
-Post.import
+Post.import force:true
