@@ -1,3 +1,5 @@
+require 'elasticsearch/model'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -21,6 +23,35 @@ class User < ActiveRecord::Base
   include UserFollowing
   include TagFollowing
   mount_uploader :avatar, AvatarUploader
+
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+
+  settings index: { number_of_shards: 1 } do
+    mappings dynamic: 'false' do
+      indexes :username, analyzer: 'english'
+      indexes :email
+    end
+  end
+
+  def self.search(term)
+    __elasticsearch__.search(
+      {
+        query: {
+          multi_match: {
+            query: term,
+            fields: ['username^10', 'email']
+          }
+        }
+      }
+    )
+  end
+
+  def as_indexed_json(options ={})
+    self.as_json({
+      only: [:username, :email]
+    })
+  end
 
   def add_like_to(likeable_obj)
     likes.where(likeable: likeable_obj).first_or_create
@@ -60,3 +91,13 @@ class User < ActiveRecord::Base
       obj.class.to_s.downcase
     end
 end
+# Delete the previous users index in Elasticsearch
+User.__elasticsearch__.client.indices.delete index: User.index_name rescue nil
+
+# Create the new index with the new mapping
+User.__elasticsearch__.client.indices.create \
+  index: User.index_name,
+  body: { settings: User.settings.to_hash, mappings: User.mappings.to_hash }
+
+# Index all user records from the DB to Elasticsearch
+User.import force:true

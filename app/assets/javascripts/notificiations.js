@@ -9,7 +9,7 @@ var Notification = {
 
       setInterval(function() {
         Notification.getNewNotifications();
-      }, 5000);
+      }, 9000);
 
       $('#notifications').click(Notification.markAsRead);
     }
