@@ -2,12 +2,14 @@ source 'https://rubygems.org'
 
 
 gem 'rails', '4.2.6'
+gem 'puma', '~> 2.15'
 gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -32,6 +34,7 @@ gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
 
+gem 'rack-mini-profiler', '~> 0.9.8'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -51,6 +54,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec', '~> 1.0'
 end
 
 group :test do
@@ -63,5 +67,5 @@ end
 group :production do
   gem 'rails_12factor', '0.0.2'
   gem 'bonsai-elasticsearch-rails'
-  gem 'puma', '~> 2.15'
+
 end

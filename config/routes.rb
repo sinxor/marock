@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
   get "top-stories" => "dashboards#top_stories", as: :top_stories
   get "search" => "search#show", as: :search
+  get "autocomplete" => "search#autocomplete", as: :autocomplete
   namespace :admin do
     resource :dashboard, only: [:show]
     resources :featured_tags, only: [:create, :destroy]
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
     end
   end
   authenticate :admin do
-    mount Sidekiq::Web => '/sidekiq' 
+    mount Sidekiq::Web => '/sidekiq'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

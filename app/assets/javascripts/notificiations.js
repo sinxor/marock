@@ -7,9 +7,9 @@ var Notification = {
     if ($('#notifications').length > 0) {
       Notification.getNewNotifications();
 
-      setInterval(function() {
-        Notification.getNewNotifications();
-      }, 9000);
+    //  setInterval(function() {
+    //    Notification.getNewNotifications();
+    //  }, 9000);
 
       $('#notifications').click(Notification.markAsRead);
     }
