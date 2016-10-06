@@ -22,6 +22,8 @@ gem 'devise', '~> 3.5.3'
 gem 'bootstrap-sass', '~> 3.3.6'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'redcarpet', '~> 3.3'
+#elasticsearch
 gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
 
