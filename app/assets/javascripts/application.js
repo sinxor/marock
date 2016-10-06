@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui/autocomplete
-//= require turbolinks
+//= require angular
 //= require bootstrap-sprockets
+//= require app
 //= require_tree .
