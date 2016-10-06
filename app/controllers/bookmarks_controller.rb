@@ -11,6 +11,7 @@ class BookmarksController < ApplicationController
 
   def destroy
     Bookmark.find(params[:id]).destroy
+    current_user.remove_bookmark_from(@bookmarkable)
     respond_to do |format|
       format.html { redirect_to :back }
       format.js

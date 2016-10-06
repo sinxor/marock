@@ -36,7 +36,7 @@ gem 'sidekiq', '~> 4.0'
 gem 'sinatra', require: false
 gem 'slim'
 
-gem 'rack-mini-profiler', '~> 0.9.8'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -46,13 +46,17 @@ group :development, :test do
   gem 'rspec-rails','~> 3.5'
   gem 'poltergeist', '~> 1.8'
   gem 'awesome_print', '~> 1.6'
+
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
+  
+  gem 'rack-mini-profiler', '~> 0.9.8'
+
+  gem 'rails_best_practices', '~> 1.15'
+  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'guard-rspec', require: false
