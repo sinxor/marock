@@ -1,22 +1,31 @@
-<%= form_for post, html: { multipart: true, class: "editor-form", autocomplete: "off"  } do |f| %>
-  <div class="form-group">
-    <%= f.text_field :title, class: 'editor-title', placeholder: 'Title', autofocus: true %>
-  </div>
-
-  <div class="form-group">
-    <%= f.text_area :body, class: 'medium-editable',
-      placeholder: 'Write your story here ...' %> </div>
+<%= form_for post, html: { multipart: true, class: "editor-form", autocomplete: "off" } do |f| %>
 
   <label class="picture_upload">
     <%= f.file_field :picture %>
     <span class="icon-camera"></span>
   </label>
+  <div class="file-upload-previewer hidden">
+    <img src="#" id="image_preview"/>
+  </div>
+  <% if post.picture? %>
+    <div class="existing-img-previewer" id="existing-img-previewer">
+      <%= image_tag post.picture.url(:thumb) %>
+    </div>
+  <% end %>
 
-  <div class="hidden">
-  <%= f.text_field :all_tags %>
+  <div class="form-group">
+    <%= f.text_field :title, class: 'editor-title', placeholder: 'Title', autofocus: true %>
   </div>
 
-  <div class="clearfix">
+  <div class="form-group">
+    <%= f.text_area :body, class: 'medium-editable' %>
+  </div>
+
+  <div class="hidden">
+    <%= f.text_field :all_tags %>
+  </div>
+
+  <div class="clearfix" data-behavior="tags" data-tags="<%= post.all_tags %>">
     <div id="js-taggle" style="position: relative;"></div>
   </div>
 
@@ -31,11 +40,31 @@ var editor = new MediumEditor('.medium-editable', {
   }
 });
 
+// preload tags if its edit.
+var tags = $('[data-behavior="tags"]').data("tags").split(', ');
+
 var my_taggle = new Taggle('js-taggle', {
-  duplicateTagClass: 'bounce'
+  duplicateTagClass: 'bounce',
+  tags: tags
 });
 
+// FIXME: is there a better way to do this?
 $('input[type="submit"]').hover(function() {
   $('#post_all_tags').val(my_taggle.getTagValues());
+});
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      $('#image_preview').attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#post_picture").change(function(){
+  readURL(this);
+  $('#existing-img-previewer').addClass('hidden');
+  $('.picture_upload').addClass('active');
+  $('.file-upload-previewer').removeClass('hidden');
 });
 </script>
