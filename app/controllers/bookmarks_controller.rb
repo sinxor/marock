@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_bookmarkable
 
   def create
     current_user.add_bookmark_to(@bookmarkable)
@@ -17,4 +18,9 @@ class BookmarksController < ApplicationController
       format.js
     end
   end
+  private
+
+    def set_bookmarkable
+      raise NotImplementedError, "This #{self.class} cannot respond to 'set_bookmarkable'"
+    end
 end

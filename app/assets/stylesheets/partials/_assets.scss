@@ -3,11 +3,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  asset-url('icomoon.eot?pvfey8');
-  src:  asset-url('icomoon.eot?pvfey8#iefix') format('embedded-opentype'),
-        asset-url('icomoon.ttf?pvfey8') format('truetype'),
-        asset-url('icomoon.woff?pvfey8') format('woff'),
-        asset-url('icomoon.svg?pvfey8#icomoon') format('svg');
+  src:  asset-url('icomoon.eot?xrrxwj');
+  src:  asset-url('icomoon.eot?xrrxwj#iefix') format('embedded-opentype'),
+        asset-url('icomoon.ttf?xrrxwj') format('truetype'),
+        asset-url('icomoon.woff?xrrxwj') format('woff'),
+        asset-url('icomoon.svg?xrrxwj#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -32,6 +32,15 @@
 .icon-tags:before {
   content: "\e905";
 }
+.icon-circle-cross:before {
+  content: "\e906";
+}
+.icon-circle-plus:before {
+  content: "\e907";
+}
+.icon-plus:before {
+  content: "\e909";
+}
 .icon-bell-o:before {
   content: "\e901";
 }
@@ -46,6 +55,9 @@
 }
 .icon-heart2:before {
   content: "\e903";
+}
+.icon-camera:before {
+  content: "\e90f";
 }
 .icon-price-tag:before {
   content: "\e935";

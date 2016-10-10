@@ -1,5 +1,5 @@
 class Responses::LikesController < LikesController
-  before_action :set_likeable
+  
 
   private
 

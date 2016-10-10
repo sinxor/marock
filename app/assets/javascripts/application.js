@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require angular
+//= require medium-editor
+//= require taggle
 //= require bootstrap-sprockets
 //= require app
 //= require_tree .
