@@ -20,8 +20,13 @@ class Post < ActiveRecord::Base
   scope :recent, -> { order(created_at: :desc) }
   scope :latest, ->(number) { recent.limit(number) }
   scope :top_stories, ->(number) { order(likes_count: :desc).limit(number) }
+  scope :published, -> { where.not(published_at: nil) }
+  scope :drafts, -> { where(published_at: nil) }
 
   mount_uploader :picture, PictureUploader
+
+  # will_pagination configuration
+  self.per_page = 5
 
   include SearchablePost
 
@@ -37,6 +42,16 @@ class Post < ActiveRecord::Base
 
   def all_tags
     tags.map(&:name).join(", ")
+  end
+
+  def publish
+    self.published_at = Time.zone.now
+    save
+  end
+
+  def save_as_draft
+    self.published_at = nil
+    save
   end
 
 end

@@ -23,6 +23,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'redcarpet', '~> 3.3'
+# Load will_paginate before elasticsearch gems.
+gem 'will_paginate', '~> 3.1'
 #elasticsearch
 gem 'elasticsearch-model', '~> 0.1.8'
 gem 'elasticsearch-rails', '~> 0.1.8'
@@ -35,7 +37,6 @@ gem 'sidekiq', '~> 4.0'
 
 gem 'sinatra', require: false
 gem 'slim'
-
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -51,7 +52,7 @@ end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  
+
   gem 'rack-mini-profiler', '~> 0.9.8'
 
   gem 'rails_best_practices', '~> 1.15'

@@ -15,15 +15,11 @@
 
   <% end %>
 
-  <% if user_signed_in? %>
-    <%= render @dashboard.feed if @dashboard.non_filtered? %>
-    <%= render @dashboard.tag_posts if @dashboard.with_tag? %>
-    <%= render @dashboard.filtered_posts if @dashboard.filtered? %>
-  <% else %>
-    <%= render @dashboard.posts if @dashboard.non_filtered? %>
-    <%= render @dashboard.tag_posts if @dashboard.with_tag? %>
-    <%= render @dashboard.filtered_posts if @dashboard.filtered? %>
-  <% end %>
+  <div data-behavior="endless-scroll">
+    <%= render @dashboard.posts %>
+  </div>
+
+  <%= will_paginate @dashboard.posts %>
 
 </div>
 
@@ -40,7 +36,7 @@
       <%= render @dashboard.following_tags %>
     </div>
     <% end %>
-    <% if @dashboard.non_filtered? %>
+    <% unless @dashboard.filtered? %>
       <h4 class="small-heading with-border">Top stories</h4>
       <div class="sidebar-top-stories">
         <ul>

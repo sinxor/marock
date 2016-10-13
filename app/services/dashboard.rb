@@ -1,34 +1,11 @@
 class Dashboard
-  attr_reader :tag, :filter
+  attr_reader :user, :posts, :tag, :filter
 
-  def initialize(user: nil, filter: nil, tag: nil )
+  def initialize(user: nil, posts: nil , tag: nil, filter: nil )
     @user = user
-    @filter = filter
+    @posts = posts
     @tag = tag
-  end
-
-  def tag_posts
-    Post.tagged_with(@tag.name)
-  end
-
-  def filtered_posts
-    case @filter
-    when :bookmarks
-      return @user.bookmarked_posts
-    when :top_stories
-      return Post.top_stories(5)
-    end
-  end
-
-  def posts
-    Post.recent.limit(8)
-  end
-
-  def feed
-
-      Feed.new(@user)
-
-
+    @filter = filter
   end
 
   def featured_tags
@@ -36,30 +13,26 @@ class Dashboard
   end
 
   def following_tags
-    @user.following_tags unless @user.nil?
+    user.following_tags unless user.nil?
   end
 
   def all_tags
     Tag.all.limit(50)
   end
 
-  def new_post
-    Post.new
-  end
-
   def top_stories
     Post.top_stories(5)
   end
 
-  def filtered?
-    !@filter.nil?
+  def new_post
+    Post.new
   end
 
   def with_tag?
-    !@tag.nil?
+    !tag.nil?
   end
 
-  def non_filtered?
-    @filter.nil? && @tag.nil?
+  def filtered?
+    filter.present?
   end
 end
