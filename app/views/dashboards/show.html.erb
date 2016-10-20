@@ -15,7 +15,7 @@
 
   <% end %>
 
-  <div data-behavior="endless-scroll">
+  <div class="posts-wrapper" data-behavior="endless-scroll">
     <%= render @dashboard.posts %>
   </div>
 
@@ -24,7 +24,7 @@
 </div>
 
 <% content_for :sidebar do %>
-  <aside class="col-md-4 col-md-offset-1 main-sidebar">
+  <aside class="col-md-4 main-sidebar">
     <h4 class="small-heading with-border">Featured tags</h4>
     <div class="tags-wrapper">
       <%= render @dashboard.featured_tags %>
