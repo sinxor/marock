@@ -46,6 +46,8 @@ Rails.application.routes.draw do
         post :mark_as_read
       end
     end
+    
+    resources :posts, only: [:create, :update]
   end
 
   authenticate :admin do
