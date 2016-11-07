@@ -60,5 +60,6 @@ class Feed
        post_ids = []
        user.following.each { |user| post_ids << user.liked_post_ids }
        post_ids.flatten.uniq
+       
      end
 end

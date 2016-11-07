@@ -23,13 +23,9 @@ class Dashboard
   def top_stories
     Post.published.top_stories(5)
   end
-
+  
   def new_post
     Post.new
-  end
-
-  def with_tag?
-    !tag.nil?
   end
 
   def filtered?
