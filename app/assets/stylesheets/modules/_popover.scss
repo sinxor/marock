@@ -23,6 +23,9 @@
   .po-username {
     font-size: 18px;
     margin-bottom: 8px;
+    a {
+      color: $font-black;
+    }
   }
   .po-description {
     font-size: 14px;
@@ -39,8 +42,13 @@
     border-top: 1px solid $light-border-color;
   }
 
+  .following-metadata {
+    margin: 0 !important;
+  }
+
   .following-count, .follower-count {
-    color: $light-gray;
+    color: $light-gray !important;
+    font-size: 14px !important;
   }
 
   .following-count {
@@ -54,4 +62,21 @@
   .follow-button {
     font-size: 11px;
   }
+}
+.po-buffer-bottom {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  bottom: 0;
+  left: 0;
+  transform: translateY(100%);
+}
+
+.po-buffer-top {
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
 }

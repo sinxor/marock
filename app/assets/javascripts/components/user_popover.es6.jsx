@@ -2,11 +2,17 @@ class UserPopover extends React.Component {
   render () {
     return (
       <div className={`user-popover popover ${this.props.position}`} style={this.cssStyles()}>
+        <div className="po-buffer-top" />
+        <div className="po-buffer-bottom" />
         <div className="arrow" />
         <div className="flex-container flex-space-btw up-main">
           <div>
-          <h3 className="po-username">{this.props.user.username}</h3>
-          <h4 className="po-description">{this.props.user.description}</h4>
+            <h3 className="po-username">
+              <a href={this.props.user.urlPath}>
+                {this.props.user.username}
+              </a>
+            </h3>
+            <h4 className="po-description">{this.props.user.description}</h4>
           </div>
           <div dangerouslySetInnerHTML={this.renderAvatarImage()} />
         </div>
@@ -16,6 +22,7 @@ class UserPopover extends React.Component {
           followerCount={this.props.user.followerCount}
           followingCount={this.props.user.followingCount}
           hideButton={this.props.user.hideButton}
+          isSignedIn={this.props.user.isSignedIn}
           className="flex-container flex-space-btw user-follow-container"
         />
       </div>
@@ -28,9 +35,9 @@ class UserPopover extends React.Component {
 
   cssStyles() {
     if (this.props.position === "bottom") {
-      return { top: 1 + 'em' };
+      return { transform: 'translate(-50%, 14px)' };
     } else {
-      return { top: -140 + 'px' };
+      return { transform: 'translate(-50%, -100%)' };
     }
   }
 }

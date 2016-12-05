@@ -1,19 +1,20 @@
 module ApplicationHelper
+
   def follow_button_for(user)
-   if user_signed_in?
-     unless current_user?(user)
-       react_component('UserFollowButton', { following: current_user.following?(user), followed_id: user.id }, { prerender: true })
-     end
-   else
-     link_to "Follow", api_relationships_path(followed_id: user.id), method: :post, class: 'button green-border-button follow-button' # this will redirect to new_user_session_path
-   end
+    if user_signed_in?
+      unless current_user?(user)
+        react_component('UserFollowButton', { following: current_user.following?(user), followed_id: user.id }, { prerender: true })
+      end
+    else
+      react_component('UserFollowButton', { isSignedIn: false });
+    end
   end
 
   def follow_tag_button_for(tag)
     if user_signed_in?
       react_component('TagFollowButton', { following: current_user.following_tag?(tag), tag_id: tag.id }, { prerender: true })
     else
-      link_to "Follow", api_interests_path(tag_id: tag.id), method: :post, class: 'pull-right button green-border-button follow-button' # this will redirect to new_user_session_path
+      link_to "Follow", api_interests_path(tag_id: tag.id), method: :post, class: 'pull-right button green-border-button follow-button' # this will redirected to new_user_session_path
     end
   end
 
@@ -31,6 +32,7 @@ module ApplicationHelper
     options[:class].strip!
     link_to text, url, options
   end
+
   def markdown(text)
     @renderer ||= Redcarpet::Render::HTML.new(filter_html: false, hard_wrap: true) # Sets filter_html to false to use Medium Editor
     @markdown_parser ||= Redcarpet::Markdown.new(@renderer, autolink: true, no_intra_emphasi: true)
