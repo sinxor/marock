@@ -24,8 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :tags, only: [:show]
-  resources :relationships, only: [:create, :destroy]
-  resources :interests, only: [:create, :destroy]
+
   resource :dashboard, only: [:show]
 
   get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
@@ -33,7 +32,6 @@ Rails.application.routes.draw do
   get "me/stories/drafts" => "stories#drafts", as: :stories_drafts
   get "me/stories/public" => "stories#published", as: :stories_published
   get "search" => "search#show", as: :search
-  get "autocomplete" => "search#autocomplete", as: :autocomplete
 
   namespace :admin do
     resource :dashboard, only: [:show]
@@ -47,7 +45,14 @@ Rails.application.routes.draw do
       end
     end
 
+    get "autocomplete" => "search_autocomplete#index"
+
     resources :posts, only: [:create, :update, :destroy]
+
+    post    "relationships" => "relationships#create"
+    delete  "relationships" => "relationships#destroy"
+    post    "interests" => "interests#create"
+    delete  "interests" => "interests#destroy"
   end
 
   authenticate :admin do

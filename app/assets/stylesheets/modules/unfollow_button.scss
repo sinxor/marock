@@ -2,12 +2,14 @@
    position: relative;
    width: 94px;
    overflow: hidden;
+   display: inline-block;
    .content {
      position: absolute;
      padding: 0.5em 1em;
      left: 0;
      transition: top 0.4s ease 0.2s;
      overflow: hidden;
+
    }
    .top {
      top: 0;

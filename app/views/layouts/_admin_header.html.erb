@@ -1,7 +1,9 @@
 <nav class="navbar navbar-inverse navbar-fixed-top navbar-admin">
   <div class="container-fluid">
     <div class="navbar-header">
-      <%= link_to "Sinzo", root_path, class: "navbar-brand", id: "logo" %>
+      <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
+        <%= image_tag('logo.png', width: 55) %> <span>Sinzo</span>
+      <% end %>
     </div>
     <ul class="nav navbar-nav filter-links">
       <li>

@@ -4,9 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg', '~> 0.15'
+gem 'devise', '~> 3.5.3'
+gem 'react-rails', '~> 1.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
+
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0'
@@ -18,7 +20,7 @@ gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog',  '1.23.0'
 gem 'net-ssh'
-gem 'devise', '~> 3.5.3'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -53,7 +55,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
 
-  gem 'rack-mini-profiler', '~> 0.9.8'
+  #gem 'rack-mini-profiler', '~> 0.9.8', require:false
 
   gem 'rails_best_practices', '~> 1.15'
   # Access an IRB console on exception pages or by using <%= console %> in views

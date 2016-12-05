@@ -93,3 +93,4 @@ production:
   database: sinzo_production
   username: sinzo
   password: <%= ENV['SINZO_DATABASE_PASSWORD'] %>
+  pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
