@@ -8,13 +8,13 @@
   .post-picture-wrapper {
     padding: 1.2em 0 0;
     position: relative;
-    height: 400px;
+    height: 380px;
     overflow: hidden;
     img {
       display: block;
-      width: 75%;
+      width: 60%;
       height: 100%;
-       position: absolute;
+      position: absolute;
     }
   }
 
@@ -41,7 +41,7 @@
       text-decoration: none;
       color: $super-light-font-color;
       font-size: 12px;
-      margin-top: 8px;
+      margin-top: 16px;
       &:hover {
         color: $light-font-color;
       }
@@ -55,5 +55,10 @@
     &:hover {
       color: $light-font-color;
     }
+  }
+
+  [data-react-class="OverlayTriggerButton"] {
+    display: inline-block;
+    cursor: pointer;
   }
 }

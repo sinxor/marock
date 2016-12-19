@@ -2,11 +2,15 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
 
+  root "dashboards#show"
+
   devise_for :admins, controllers: { sessions: 'admin/sessions' }
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  root "dashboards#show"
+
+
+
 
   resources :users, only: [:show, :edit, :update] do
     resources :recommended_posts, only: [:index]
@@ -49,6 +53,9 @@ Rails.application.routes.draw do
 
     resources :posts, only: [:create, :update, :destroy]
     resources :users, only: [:show]
+    resources :likers, only: [:index]
+    resources :followers, only: [:index]
+    resources :following, only: [:index]
 
     post    "relationships" => "relationships#create"
     delete  "relationships" => "relationships#destroy"

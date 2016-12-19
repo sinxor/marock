@@ -4,9 +4,9 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
-  validates :username, uniqueness: { case_sensitive: false },
-                       presence: true
+         :recoverable, :rememberable, :trackable, :validatable,
+         :omniauthable, :omniauth_providers => [:facebook, :twitter, :google_oauth2]
+  validates :username, presence: true
   validate :avatar_image_size
 
   has_many :posts, dependent: :destroy
@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   include SearchableUser
+  include OmniauthableUser
 
   def add_like_to(likeable_obj)
     likes.where(likeable: likeable_obj).first_or_create
@@ -54,6 +55,7 @@ class User < ActiveRecord::Base
     send("bookmarked_#{downcased_class_name(bookmarkable_obj)}_ids").include?(bookmarkable_obj.id)
   end
 
+
   private
 
     # Validates the size on an uploaded image.
@@ -72,6 +74,7 @@ class User < ActiveRecord::Base
     def clear_notifications
       Notification.where(actor_id: self.id).destroy_all
     end
+
     def send_welcome_email
       WelcomeEmailJob.perform_later(self.id)
     end

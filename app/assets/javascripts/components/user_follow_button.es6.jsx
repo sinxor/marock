@@ -15,9 +15,9 @@ class UserFollowButton extends React.Component {
 
   renderButton() {
 
-    if (this.props.isSignedIn === false) {
+    if (window.userSignedIn === false) {
       return (
-        <a href="/users/sign_in" className="button green-border-button follow-button">
+        <a href="" className="button green-border-button follow-button" onClick={this.openOverlay}>
           Follow
         </a>
       );
@@ -46,7 +46,12 @@ class UserFollowButton extends React.Component {
       );
     }
   }
-
+  // FIXME: this is not really a React way. Maybe create an Overlay and
+    // TriggerOverlayButton components?
+    openOverlay(event) {
+      event.preventDefault();
+      $('[data-behavior="overlay"]').addClass('open');
+    }
   handleFollowClick(event) {
     $.ajax({
       url: `/api/relationships?followed_id=${this.props.followed_id}`,

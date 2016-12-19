@@ -21,6 +21,7 @@
 
 @import "partials/assets";
 @import "partials/variables";
+@import "partials/mixins";
 @import 'partials/miscellaneous';
 
 @import "partials/base";
@@ -52,6 +53,9 @@
 @import 'modules/hero';
 @import 'modules/nav_tabs';
 @import 'modules/popover';
+@import 'modules/social_signin';
+@import 'modules/overlay';
+@import 'modules/alert_message';
 
 // Vendor
 @import 'vendor/medium-editor';
