@@ -2,7 +2,12 @@ class OverlayTriggerButton extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { isOpen: false, users: [] };
+    this.state = { isOpen: false, users: [], currentPage: null, nextPage: null };
+
+    this.handleCloseClick = this.handleCloseClick.bind(this);
+    this.handleOpenClick = this.handleOpenClick.bind(this);
+    this.handlePrevClick = this.handlePrevClick.bind(this);
+    this.handleNextClick = this.handleNextClick.bind(this);
   }
 
   render () {
@@ -12,13 +17,17 @@ class OverlayTriggerButton extends React.Component {
           <span dangerouslySetInnerHTML={ {__html: this.props.text} }>
           </span>
           <div className="overlay overlay-hugeinc open">
-            <button className="overlay-close" onClick={this.handleCloseClick.bind(this)}>
+            <button className="overlay-close" onClick={this.handleCloseClick}>
               <span className="glyphicon glyphicon-remove"></span>
             </button>
             <nav className="users-overlay">
               <h2 className="grayed-heading center">{this.props.overlayHeading}</h2>
               <ul>
                 {this.renderUsers()}
+                <li className="pagination-button-group">
+                  {this.renderPrevButton()}
+                  {this.renderNextButton()}
+                </li>
               </ul>
             </nav>
           </div>
@@ -27,10 +36,10 @@ class OverlayTriggerButton extends React.Component {
     } else {
       return (
         <span>
-          <span dangerouslySetInnerHTML={ {__html: this.props.text} } onClick={this.handleOpenClick.bind(this)}>
+          <span dangerouslySetInnerHTML={ {__html: this.props.text} } onClick={this.handleOpenClick}>
           </span>
           <div className="overlay overlay-hugeinc">
-            <button className="overlay-close" onClick={this.handleCloseClick.bind(this)}>
+            <button className="overlay-close" onClick={this.handleCloseClick}>
               <span className="glyphicon glyphicon-remove"></span>
             </button>
             <nav className="users-overlay">
@@ -68,20 +77,72 @@ class OverlayTriggerButton extends React.Component {
     return <UserFollowButton following={user.following} followed_id={user.id} />
   }
 
+  renderPrevButton() {
+    if (this.state.currentPage > 1) {
+      return (
+        <a className="button" onClick={this.handlePrevClick}>Prev</a>
+      );
+    }
+  }
+
+  renderNextButton() {
+    if (this.state.nextPage !== null) {
+      return (
+        <a className="button" onClick={this.handleNextClick}>Next</a>
+      );
+    }
+  }
+
   handleOpenClick(event) {
     $.ajax({
       url: this.props.apiEndpoint,
       method: 'GET',
       dataType: 'json',
       success: (data) => {
-        console.log(data);
-        this.setState({ isOpen: true, users: data });
+        if (data.length) {
+          this.setState({
+            isOpen: true,
+            users: data,
+            currentPage: data[0].currentPage,
+            nextPage: data[0].nextPage
+          });
+        }
       }
     });
   }
 
   handleCloseClick(event) {
     this.setState({ isOpen: false });
+  }
+
+  handlePrevClick() {
+    $.ajax({
+      url: `${this.props.apiEndpoint}&page=${this.state.currentPage - 1}`,
+      method: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        this.setState({
+          users: data,
+          currentPage: data[0].currentPage,
+          nextPage: data[0].nextPage
+        });
+      }
+    });
+  }
+
+  handleNextClick() {
+    $.ajax({
+      url: `${this.props.apiEndpoint}&page=${this.state.nextPage}`,
+      method: 'GET',
+      dataType: 'json',
+      success: (data) => {
+        this.setState({
+          users: data,
+          currentPage: data[0].currentPage,
+          nextPage: data[0].nextPage
+        });
+      }
+    });
   }
 
 }

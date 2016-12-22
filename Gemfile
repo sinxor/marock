@@ -27,7 +27,6 @@ gem 'net-ssh'
 gem 'bootstrap-sass', '~> 3.3.6'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'redcarpet', '~> 3.3'
 # Load will_paginate before elasticsearch gems.
 gem 'will_paginate', '~> 3.1'
 #elasticsearch
@@ -42,6 +41,9 @@ gem 'sidekiq', '~> 4.0'
 
 gem 'sinatra', require: false
 gem 'slim'
+gem 'sidetiq', '~> 0.7.0'
+
+gem 'nokogiri', '~> 1.6'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

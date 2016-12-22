@@ -11,6 +11,7 @@ body.posts.show {
       margin: auto;
     }
   }
+
   .title {
     color: $black;
     font-weight: 600;
@@ -22,23 +23,24 @@ body.posts.show {
   }
 
   .post-tags {
-      margin: 2em 0 3em;
-    }
-
-    .tag {
-      padding: 0.5em 1em;
-      background: $super-light-gray;
-      text-decoration: none;
-      text-transform: capitalize;
-      color: rgba(0, 0, 0, 0.6);
-      font-size: 13px;
-      border-radius: 3px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      &:last-child {
-        margin-right: 0;
-      }
+    margin: 2em 0 3em;
   }
+
+  .tag {
+    padding: 0.5em 1em;
+    background: $super-light-gray;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 13px;
+    @include border-radius($radius);
+    margin-right: 8px;
+    margin-bottom: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
   .author-info {
     display: flex;
     padding: 2.5em 0;
@@ -60,14 +62,18 @@ body.posts.show {
       }
     }
   }
-  .edit-delete-button-wrapper {
-     padding: 1em 0;
-     margin-bottom: 1em;
-   }
-   #new_response {
-     input[type="submit"] {
-       margin-top: 12px;
-     }
-   }
 
+  .edit-delete-button-wrapper {
+    padding: 1em 0;
+    margin-bottom: 1em;
+  }
+  #new_response {
+    input[type="submit"] {
+      margin-top: 12px;
+    }
+  }
+  [data-react-class="OverlayTriggerButton"] {
+    display: inline-block;
+    cursor: pointer;
+  }
 }

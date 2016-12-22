@@ -2,7 +2,6 @@ class Feed
   include ActiveModel::Model
   attr_reader :user, :page
 
-
   def initialize(user, page: nil)
     @user = user
     @page = page
@@ -20,12 +19,16 @@ class Feed
     tagged_post_ids.include?(post.id)
   end
 
+  def following_author?(post)
+    following_users_post_ids.include?(post.id)
+  end
+
   def recommended?(post)
     recommended_post_ids.include?(post.id)
   end
 
-  def following_author?(post)
-    following_users_post_ids.include?(post.id)
+  def featured?(post)
+    featured_post_ids.include?(post.id)
   end
 
   def tag_for(post)
@@ -52,14 +55,17 @@ class Feed
        Tagging.where(tag_id: user.following_tag_ids).pluck(:post_id).uniq
      end
 
+     def featured_post_ids
+       Post.where(featured: true).pluck(:id)
+     end
+
      def feed_post_ids
-       (Post.where(user_id: user_ids).pluck(:id) + tagged_post_ids + recommended_post_ids).uniq
+       (Post.where(user_id: user_ids).pluck(:id) + tagged_post_ids + recommended_post_ids + featured_post_ids).uniq
      end
 
      def recommended_post_ids
        post_ids = []
        user.following.each { |user| post_ids << user.liked_post_ids }
        post_ids.flatten.uniq
-       
      end
 end
