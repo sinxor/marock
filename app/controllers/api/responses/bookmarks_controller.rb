@@ -1,5 +1,5 @@
-class Responses::BookmarksController < BookmarksController
-  
+class API::Responses::BookmarksController < API::BookmarksController
+
 
   private
 

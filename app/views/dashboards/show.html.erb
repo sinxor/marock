@@ -1,4 +1,5 @@
 <div class="col-md-6 col-md-offset-1 dashboard-main-content">
+
   <% unless @dashboard.top_stories? %>
     <div class="posts-wrapper" data-behavior="endless-scroll">
       <%= render @dashboard.posts %>
@@ -24,9 +25,7 @@
 
     <% if user_signed_in? %>
     <h4 class="small-heading with-border">Tags you follow</h4>
-    <div class="tags-wrapper following-tags">
-      <%= render @dashboard.following_tags %>
-    </div>
+    <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
     <% end %>
 
     <% unless @dashboard.filtered? %>

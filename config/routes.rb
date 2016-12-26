@@ -1,16 +1,9 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-
   root "dashboards#show"
-
   devise_for :admins, controllers: { sessions: 'admin/sessions' }
-
   devise_for :users, controllers: { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
-
-
-
-
 
   resources :users, only: [:show, :edit, :update] do
     resources :recommended_posts, only: [:index]
@@ -18,18 +11,9 @@ Rails.application.routes.draw do
 
   resources :posts, except: [:index] do
     resources :responses, only: [:create]
-    resources :likes, only: [:create, :destroy], module: :posts
-    resources :bookmarks, only: [:create, :destroy], module: :posts
-  end
-
-  resources :responses, only: [] do
-    resources :likes, only: [:create, :destroy], module: :responses
-    resources :bookmarks, only: [:create, :destroy], module: :responses
   end
 
   resources :tags, only: [:show]
-
-  resource :dashboard, only: [:show]
 
   get "me/bookmarks" => "dashboards#bookmarks", as: :dashboard_bookmarks
   get "top-stories" => "dashboards#top_stories", as: :top_stories
@@ -57,6 +41,17 @@ Rails.application.routes.draw do
     resources :likers, only: [:index]
     resources :followers, only: [:index]
     resources :following, only: [:index]
+    resources :following_tags, only: [:index]
+
+    resources :posts, only: [] do
+      resource :likes, only: [:create, :destroy], module: :posts
+      resource :bookmarks, only: [:create, :destroy], module: :posts
+    end
+
+    resources :responses, only: [] do
+      resource :likes, only: [:create, :destroy], module: :responses
+      resource :bookmarks, only: [:create, :destroy], module: :responses
+    end
 
     post    "relationships" => "relationships#create"
     delete  "relationships" => "relationships#destroy"
@@ -67,5 +62,4 @@ Rails.application.routes.draw do
   authenticate :admin do
     mount Sidekiq::Web => '/sidekiq'
   end
-
 end

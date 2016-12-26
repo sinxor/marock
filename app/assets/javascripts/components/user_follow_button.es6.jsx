@@ -5,6 +5,18 @@ class UserFollowButton extends React.Component {
     this.state = { following: this.props.following };
   }
 
+  componentWillMount() {
+    this.token = PubSub.subscribe('UserFollowButton:onClick', (msg, data) => {
+      if (this.props.followed_id === data.followed_id) {
+        this.setState({ following: data.following });
+      }
+    })
+  }
+
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.token);
+  }
+
   render () {
     return (
       <div>
@@ -46,12 +58,14 @@ class UserFollowButton extends React.Component {
       );
     }
   }
+
   // FIXME: this is not really a React way. Maybe create an Overlay and
-    // TriggerOverlayButton components?
-    openOverlay(event) {
-      event.preventDefault();
-      $('[data-behavior="overlay"]').addClass('open');
-    }
+  // TriggerOverlayButton components?
+  openOverlay(event) {
+    event.preventDefault();
+    $('[data-behavior="overlay"]').addClass('open');
+  }
+
   handleFollowClick(event) {
     $.ajax({
       url: `/api/relationships?followed_id=${this.props.followed_id}`,
@@ -64,8 +78,13 @@ class UserFollowButton extends React.Component {
         if (this.props.onFollowerCountChange) {
           this.props.onFollowerCountChange(data.followerCount);
         }
+        PubSub.publish('UserFollowButton:onClick', {
+          followed_id: this.props.followed_id,
+          following: true
+        });
       }
     });
+
   }
 
   handleUnfollowClick(event) {
@@ -80,6 +99,10 @@ class UserFollowButton extends React.Component {
         if (this.props.onFollowerCountChange) {
           this.props.onFollowerCountChange(data.followerCount);
         }
+        PubSub.publish('UserFollowButton:onClick', {
+          followed_id: this.props.followed_id,
+          following: false
+        });
       }
     });
   }

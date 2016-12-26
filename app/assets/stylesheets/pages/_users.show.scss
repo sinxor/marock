@@ -19,12 +19,14 @@ body.recommended_posts.index {
     -ms-justify-content: space-between;
     -webkit-justify-content: space-between;
     justify-content: space-between;
+    padding-bottom: 10px;
   }
   .hero-title {
     font-weight: 700;
     font-size: 32px;
   }
   .hero-description {
+    width: 85%;
     font-size: 16px;
     font-weight: normal;
     line-height: 1.2;
@@ -75,6 +77,7 @@ body.recommended_posts.index {
     top: -1000px;
   }
   .change-avatar {
+    border: 1px solid $border-color;
     @include border-radius($round);
     padding: 2px 5px;
     margin: 2px;
@@ -85,6 +88,7 @@ body.recommended_posts.index {
     height: 100px;
     opacity: 0.7;
     position: relative;
+    transition: all .1s;
 
     span.icon-camera {
       position: absolute;
@@ -101,8 +105,10 @@ body.recommended_posts.index {
     }
   }
   .change-avatar:hover {
+    border: 1px solid $border-hover-color;
   }
   .change-avatar:active {
+    border: 1px solid $border-hover-color;
   }
 }
 
@@ -110,6 +116,7 @@ form.edit_user {
   input[type="text"], textarea {
     border: none;
     outline: none;
+    line-height: 24px;
   }
   textarea {
     width: 100%;
