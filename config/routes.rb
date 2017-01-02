@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "me/stories/drafts" => "stories#drafts", as: :stories_drafts
   get "me/stories/public" => "stories#published", as: :stories_published
   get "search" => "search#show", as: :search
+  get "search/users" => "search#users", as: :search_users
 
   namespace :admin do
     resource :dashboard, only: [:show]
@@ -29,9 +30,9 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :notifications, only: [:index] do
-      collection do
-        post :mark_as_read
-      end
+      post :mark_as_touched, on: :collection
+      post :mark_all_as_read, on: :collection
+      post :mark_as_read, on: :member
     end
 
     get "autocomplete" => "search_autocomplete#index"
@@ -39,6 +40,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :update, :destroy]
     resources :users, only: [:show]
     resources :likers, only: [:index]
+    resources :tag_followers, only: [:index]
     resources :followers, only: [:index]
     resources :following, only: [:index]
     resources :following_tags, only: [:index]

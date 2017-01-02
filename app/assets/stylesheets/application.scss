@@ -36,6 +36,7 @@
 @import 'pages/posts.new';
 @import 'pages/sessions.new';
 @import 'pages/stories.drafts';
+@import 'pages/search.show';
 
 // Modules
 @import 'modules/header';
@@ -55,6 +56,9 @@
 @import 'modules/social_signin';
 @import 'modules/overlay';
 @import 'modules/alert_message';
+@import 'modules/notifications';
+@import 'modules/tags';
+@import 'modules/progress_bar';
 
 // Vendor
 @import 'vendor/medium-editor';

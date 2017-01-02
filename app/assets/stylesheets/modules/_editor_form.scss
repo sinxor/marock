@@ -14,6 +14,10 @@
     min-height: 300px;
     outline: none;
     @include well-read;
+    line-height: 1.5;
+    position: relative;
+    left: -60px;
+    padding-left: 60px;
   }
   .picture_upload {
     position: absolute;
@@ -50,7 +54,7 @@
   display: inline-block;
   float: right;
   margin-right: 8px;
-  transition: all 0.5s ease;
+  transition: all .1s;
 }
 .picture_upload:hover {
   border: 1px solid $accent-color;
@@ -61,14 +65,17 @@
 .taggle_list {
   padding: 0 !important;
   float: none !important;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
-  -webkit-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }
 .taggle_placeholder {
   top: 3px !important;
   left: 0px !important;
+}
+
+// Override Medium Editor Insert Plugin.
+.medium-insert-buttons {
+  a {
+    color: $light-gray;
+  }
 }

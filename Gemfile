@@ -11,6 +11,7 @@ gem 'omniauth-twitter', '~> 1.2'
 gem 'react-rails', '~> 1.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
+gem 'autoprefixer-rails'
 
 
 gem 'jquery-rails'
@@ -19,6 +20,7 @@ gem 'jquery-ui-rails', '~> 5.0'
 #gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
+gem 'turbolinks', '~> 5.0.0'
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
 gem 'fog',  '1.23.0'
@@ -60,7 +62,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
 
-  #gem 'rack-mini-profiler', '~> 0.9.8', require:false
+  gem 'rack-mini-profiler', '~> 0.9.8', require:false
 
   gem 'rails_best_practices', '~> 1.15'
   # Access an IRB console on exception pages or by using <%= console %> in views

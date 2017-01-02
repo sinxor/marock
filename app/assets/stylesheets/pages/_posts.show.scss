@@ -44,11 +44,7 @@ body.posts.show {
   }
 
   .author-info {
-    display: -ms-flex;
-    display: -webkit-flex;
     display: flex;
-    -ms-justify-content: space-around;
-    -webkit-justify-content: space-around;
     justify-content: space-around;
     padding: 2.5em 0;
     border-top: 1px solid $light-border-color;
@@ -116,6 +112,44 @@ body.posts.show {
       width: 45%;
       padding-left: 10px;
       align-items: center;
+    }
+    .response-icon-wrapper {
+      margin-left: 22px;
+      text-decoration: none;
+      display: inline-block;
+      padding-top: 0.5px;
+    }
+    .icon-comment-o {
+      font-size: 18px;
+      color: $font-black;
+    }
+    .response-count {
+      font-size: 14px;
+      margin-left: 3px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    .bookmark-button {
+      margin-left: auto;
+    }
+    .response-icon-wrapper {
+      margin-left: 22px;
+      text-decoration: none;
+      display: inline-block;
+      padding-top: 0.5px;
+    }
+    .icon-comment-o {
+      font-size: 18px;
+      color: $font-black;
+    }
+    .response-count {
+      font-size: 14px;
+      margin-left: 3px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    .bookmark-button {
+      margin-left: auto;
     }
   }
 

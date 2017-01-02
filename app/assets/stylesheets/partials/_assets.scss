@@ -8,11 +8,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  asset-url('icomoon.eot?fjg0ie');
-  src:  asset-url('icomoon.eot?fjg0ie#iefix') format('embedded-opentype'),
-        asset-url('icomoon.ttf?fjg0ie') format('truetype'),
-        asset-url('icomoon.woff?fjg0ie') format('woff'),
-        asset-url('icomoon.svg?fjg0ie#icomoon') format('svg');
+  src:  asset-url('icomoon.eot?3i4v7');
+  src:  asset-url('icomoon.eot?3i4v7#iefix') format('embedded-opentype'),
+        asset-url('icomoon.ttf?3i4v7') format('truetype'),
+        asset-url('icomoon.woff?3i4v7') format('woff'),
+        asset-url('icomoon.svg?3i4v7#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -46,6 +46,12 @@
 .icon-plus:before {
   content: "\e909";
 }
+.icon-comment-o:before {
+  content: "\e90b";
+}
+.icon-commenting-o:before {
+  content: "\e90a";
+}
 .icon-facebook-official:before {
   content: "\e90c";
 }
@@ -69,6 +75,12 @@
 }
 .icon-price-tag:before {
   content: "\e935";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-user-plus:before {
+  content: "\e973";
 }
 .icon-bookmark:before {
   content: "\e9d2";

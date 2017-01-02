@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require medium-editor
 //= require handlebars
+//= require turbolinks
 //= require jquery-sortable
 //= require jquery.ui.widget
 //= require jquery.iframe-transport

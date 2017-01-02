@@ -6,31 +6,19 @@ class FollowingTagList extends React.Component {
   }
 
   componentWillMount() {
-    PubSub.subscribe('TagFollowButton:onClick', () => {
+    this.token = PubSub.subscribe('TagFollowButton:onClick', () => {
       this.fetchTags();
     })
   }
 
-  render () {
-    return (
-      <div className="tags-wrapper following-tag-list">
-        {this.renderFollowingTags()}
-      </div>
-    );
+  componentWillUnmount() {
+    PubSub.unsubscribe(this.token);
   }
 
-  renderFollowingTags() {
-    console.log(this.state.followingTags);
-    return this.state.followingTags.map(tag => {
-      return (
-        <a
-          key={tag.id}
-          className="tag"
-          href={`/tags/${tag.id}`}>
-          {tag.name}
-        </a>
-      );
-    })
+  render () {
+    return (
+      <TagList tags={this.state.followingTags} className="following-tag-list" />
+    );
   }
 
   fetchTags() {
@@ -38,9 +26,12 @@ class FollowingTagList extends React.Component {
       url: '/api/following_tags.json',
       method: 'GET',
       success: (data) => {
-        console.log(data);
         this.setState({ followingTags: data });
       }
     });
   }
 }
+
+FollowingTagList.propTypes = {
+  followingTags: React.PropTypes.array.isRequired
+};
