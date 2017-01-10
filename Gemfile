@@ -9,24 +9,28 @@ gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
 gem 'omniauth-twitter', '~> 1.2'
 gem 'react-rails', '~> 1.6'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'autoprefixer-rails', '~> 6.3'
 
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails', '~> 5.0'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
+gem 'turbolinks', '~> 5.0.0'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-gem 'turbolinks', '~> 5.0.0'
+gem 'friendly_id', '~> 5.1'
+
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
-gem 'fog',  '1.23.0'
+gem 'fog',  '1.38.0'
 gem 'net-ssh'
 
-gem 'bootstrap-sass', '~> 3.3.6'
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Load will_paginate before elasticsearch gems.
@@ -39,7 +43,7 @@ gem 'elasticsearch-rails', '~> 0.1.8'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Background Job
-gem 'sidekiq', '~> 4.0'
+#gem 'sidekiq', '~> 4.0'
 
 gem 'sinatra', require: false
 gem 'slim'
@@ -68,9 +72,9 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  #gem 'spring'
   gem 'guard-rspec', require: false
-  gem 'spring-commands-rspec', '~> 1.0'
+  #gem 'spring-commands-rspec', '~> 1.0'
 end
 
 group :test do
