@@ -17,8 +17,8 @@ gem 'autoprefixer-rails', '~> 6.3'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
-gem 'turbolinks', '~> 5.0.0'
 
+gem 'coffee-rails', '~> 4.2.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 5.0'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -8,11 +8,11 @@
 
 @font-face {
   font-family: 'icomoon';
-  src:  asset-url('icomoon.eot?3i4v7');
-  src:  asset-url('icomoon.eot?3i4v7#iefix') format('embedded-opentype'),
-        asset-url('icomoon.ttf?3i4v7') format('truetype'),
-        asset-url('icomoon.woff?3i4v7') format('woff'),
-        asset-url('icomoon.svg?3i4v7#icomoon') format('svg');
+  src:  asset-url('icomoon.eot?n8n5os');
+  src:  asset-url('icomoon.eot?n8n5os#iefix') format('embedded-opentype'),
+        asset-url('icomoon.ttf?n8n5os') format('truetype'),
+        asset-url('icomoon.woff?n8n5os') format('woff'),
+        asset-url('icomoon.svg?n8n5os#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -31,6 +31,49 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.icon-globe:before {
+  content: "\e910";
+}
+.icon-home:before {
+  content: "\e90d";
+}
+.icon-camera:before {
+  content: "\e90f";
+}
+.icon-price-tag:before {
+  content: "\e935";
+}
+.icon-calendar2:before {
+  content: "\e953";
+}
+.icon-user:before {
+  content: "\e971";
+}
+.icon-user-plus:before {
+  content: "\e973";
+}
+.icon-link:before {
+  content: "\e9cb";
+}
+.icon-bookmark:before {
+  content: "\e9d2";
+}
+.icon-circle-down:before {
+  content: "\ea43";
+}
+.icon-google:before {
+  content: "\ea88";
+}
+.icon-google-plus:before {
+  content: "\ea8b";
+}
+.icon-facebook2:before {
+  content: "\ea91";
+}
+.icon-twitter2:before {
+  content: "\ea96";
+}
 .icon-tag:before {
   content: "\e900";
 }
@@ -45,6 +88,15 @@
 }
 .icon-plus:before {
   content: "\e909";
+}
+.icon-map-marker:before {
+  content: "\e911";
+}
+.icon-chain:before {
+  content: "\e912";
+}
+.icon-calendar:before {
+  content: "\e90e";
 }
 .icon-comment-o:before {
   content: "\e90b";
@@ -69,34 +121,4 @@
 }
 .icon-heart2:before {
   content: "\e903";
-}
-.icon-camera:before {
-  content: "\e90f";
-}
-.icon-price-tag:before {
-  content: "\e935";
-}
-.icon-user:before {
-  content: "\e971";
-}
-.icon-user-plus:before {
-  content: "\e973";
-}
-.icon-bookmark:before {
-  content: "\e9d2";
-}
-.icon-circle-down:before {
-  content: "\ea43";
-}
-.icon-google:before {
-  content: "\ea88";
-}
-.icon-google-plus:before {
-  content: "\ea8b";
-}
-.icon-facebook2:before {
-  content: "\ea91";
-}
-.icon-twitter2:before {
-  content: "\ea96";
 }

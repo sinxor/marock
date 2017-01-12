@@ -23,11 +23,11 @@ class UsersController < ApplicationController
   private
 
     def set_user
-      @user = User.friendly.find(params[:id])
+      @user = User.find(params[:id])
     end
 
     def user_params
-      params.require(:user).permit(:description, :avatar)
+      params.require(:user).permit(:description, :avatar, :location)
     end
 
     def check_for_correct_user
