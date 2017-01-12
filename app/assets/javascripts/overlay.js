@@ -17,4 +17,4 @@ var Overlay = {
 };
 
 $(document).ready( Overlay.setup );
-$(document).on( 'page:load', Overlay.setup );
+$(document).on( 'turbolinks:load', Overlay.setup );
