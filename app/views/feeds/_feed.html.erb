@@ -2,7 +2,7 @@
   <div class="feed-panel">
     <% if feed.tagged?(post) %>
       <div class="feed-metadata">
-        <span class="icon-price-tag"></span> <%= link_to feed.tag_for(post).name, feed.tag_for(post) %>
+        <%= icon('tag') %> <%= link_to feed.tag_for(post).name, feed.tag_for(post) %>
       </div>
     <% elsif feed.recommended?(post) %>
     <div class="feed-metadata">
@@ -13,7 +13,7 @@
     </div>
     <% elsif feed.featured?(post) %>
       <div class="feed-metadata">
-        Featured by Sinzo Staff and recommended by <%= pluralize(post.likes.count, 'other') %>
+        Featured by Stories Staff and recommended by <%= pluralize(post.likes.count, 'other') %>
       </div>
     <% end %>
     <%= render partial: 'posts/post', locals: { post: post } %>

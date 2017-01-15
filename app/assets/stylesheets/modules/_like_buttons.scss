@@ -3,13 +3,9 @@
   border: none;
   outline: none;
   background-color: transparent;
-  span[class^='icon'] {
+  i.fa {
     color: $accent-color;
     font-size: 18px;
-    &:hover,
-    &:active {
-      color: $light-font-color;
-    }
   }
 }
 
@@ -41,8 +37,12 @@
   border: none;
   outline: none;
   background-color: transparent;
-  span[class^='icon'] {
+  i.fa {
     color: $light-gray;
     font-size: 18px;
+    &:hover,
+    &:active {
+      color: $light-font-color;
+    }
   }
- }
+}

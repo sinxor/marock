@@ -11,8 +11,10 @@ gem 'omniauth-twitter', '~> 1.2'
 gem 'react-rails', '~> 1.6'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sass-rails', '~> 5.0'
+gem 'font-awesome-sass', '~> 4.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'autoprefixer-rails', '~> 6.3'
+gem 'annotate'
 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

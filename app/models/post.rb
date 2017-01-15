@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: posts
+#
+#  id           :integer          not null, primary key
+#  title        :string
+#  body         :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  user_id      :integer
+#  picture      :string
+#  likes_count  :integer          default("0")
+#  published_at :datetime
+#  featured     :boolean          default("false")
+#  lead         :text
+#  slug         :string
+#
+
 require 'elasticsearch/model'
 
 class Post < ActiveRecord::Base
@@ -47,7 +65,7 @@ class Post < ActiveRecord::Base
 
   def all_tags=(names)
     self.tags = names.split(",").map do |name|
-      Tag.where(name: name.strip).first_or_create!
+      Tag.first_or_create_with_name!(name)
     end
   end
 
