@@ -13,6 +13,7 @@ module SearchableUser
         indexes :username, analyzer: 'autocomplete'
         indexes :email
         indexes :avatar_url
+        indexes :slug
       end
     end
 
@@ -33,7 +34,7 @@ module SearchableUser
 
   def as_indexed_json(options ={})
     self.as_json({
-      methods: [:avatar_url], only: [:username, :email, :avatar_url]
+      methods: [:avatar_url], only: [:username, :email, :avatar_url, :slug]
     })
   end
 
@@ -50,6 +51,7 @@ module SearchableUser
       ElasticsearchIndexJob.perform_later('delete', 'Post', post.id) if post.published?
     end
   end
+
   INDEX_OPTIONS =
     { number_of_shards: 1, analysis: {
     filter: {
@@ -71,6 +73,5 @@ module SearchableUser
     }
   }
   }
-
 
 end

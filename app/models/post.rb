@@ -16,7 +16,7 @@
 #  slug         :string
 #
 
-require 'elasticsearch/model'
+
 
 class Post < ActiveRecord::Base
 

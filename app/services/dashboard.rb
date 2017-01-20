@@ -23,9 +23,9 @@ class Dashboard
   def top_stories
     Post.published.top_stories(5)
   end
-  
+
   def new_post
-    Post.new
+    @user.posts.new
   end
 
   def filtered?

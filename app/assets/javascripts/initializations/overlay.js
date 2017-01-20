@@ -1,5 +1,5 @@
 var Overlay = {
-  setup: function() {
+  init: function() {
     // Set up event handler
     $('[data-behavior="trigger-overlay"]').click(Overlay.open);
     $('[data-behavior="close-overlay"]').click(Overlay.close);
@@ -16,5 +16,5 @@ var Overlay = {
   }
 };
 
-$(document).ready( Overlay.setup );
-$(document).on( 'turbolinks:load', Overlay.setup );
+$(document).ready( Overlay.init );
+$(document).on( 'turbolinks:load', Overlay.init );

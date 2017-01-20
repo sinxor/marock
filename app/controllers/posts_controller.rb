@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authorize_user, only: [:edit, :update, :destroy]
 
-  layout "editor", only: [:new, :edit]
+  layout "editor", only: [:new, :edit, :create, :update]
 
   def show
     @response = Response.new
@@ -47,6 +47,13 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_url, notice: "Successfully deleted the post"
+  end
+
+  # TODO: ideally move this to a separate controller?
+  def create_and_edit
+    @post = current_user.posts.build(post_params)
+    @post.save_as_draft
+    redirect_to edit_post_url(@post)
   end
 
   private

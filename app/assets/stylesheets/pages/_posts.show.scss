@@ -70,6 +70,20 @@ body.posts.show {
     padding: 1em 0;
     margin-bottom: 1em;
   }
+
+  .response-panel {
+    background: $white;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(0,0,0, 0.09);
+    @include box-shadow;
+    @include border-radius($radius);
+    .post-metadata {
+      margin-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
   #new_response {
     input[type="submit"] {
       margin-top: 12px;
@@ -119,26 +133,7 @@ body.posts.show {
       display: inline-block;
       padding-top: 0.5px;
     }
-    .icon-comment-o {
-      font-size: 18px;
-      color: $font-black;
-    }
-    .response-count {
-      font-size: 14px;
-      margin-left: 3px;
-      font-weight: 600;
-      color: rgba(0, 0, 0, 0.3);
-    }
-    .bookmark-button {
-      margin-left: auto;
-    }
-    .response-icon-wrapper {
-      margin-left: 22px;
-      text-decoration: none;
-      display: inline-block;
-      padding-top: 0.5px;
-    }
-    .icon-comment-o {
+    .fa-comment-o {
       font-size: 18px;
       color: $font-black;
     }

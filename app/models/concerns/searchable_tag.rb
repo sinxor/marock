@@ -11,6 +11,7 @@ module SearchableTag
     settings INDEX_OPTIONS do
       mappings dynamic: 'false' do
         indexes :name, analyzer: 'autocomplete'
+        indexes :slug
       end
     end
 
@@ -30,7 +31,7 @@ module SearchableTag
 
   def as_indexed_json(options ={})
     self.as_json({
-      only: [:name]
+      only: [:name, :slug]
     })
   end
 
@@ -39,7 +40,7 @@ module SearchableTag
   end
 
   def delete_document
-    ElasticsearchIndexJob.perform_later('delete', 'Tag', self.id) 
+    ElasticsearchIndexJob.perform_later('delete', 'Tag', self.id)
   end
 
   INDEX_OPTIONS =
