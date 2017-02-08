@@ -20,6 +20,9 @@ var Editor = {
             acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
             method: 'PATCH'
           }
+        },
+        embeds: {
+          oembedProxy: null
         }
       }
     });
@@ -96,7 +99,7 @@ var Editor = {
       success: function() { console.log('autosave successful'); }
     });
   }
-
+  
 };
 
 $(document).ready( Editor.init );
