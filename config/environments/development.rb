@@ -43,4 +43,10 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   # React configurations.
   config.react.variant = :development
+  config.react.addons = true
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.alert = true
+  end
 end

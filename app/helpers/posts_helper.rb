@@ -7,7 +7,8 @@ module PostsHelper
       "#{min} min read"
     end
   end
-  def link_to_responses_to(post)
-    link_to (pluralize(post.responses.count, "response")), post_path(post, anchor: 'responses'), class: 'response-count'
+
+  def remove_script_tag(html)
+    html.gsub(/<script.*?>[\s\S]*<\/script>/i, "")
   end
 end
