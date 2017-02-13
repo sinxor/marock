@@ -25,7 +25,7 @@
       @include border-radius($button);
       border: 1px solid $border-color;
       outline: none;
-      background-color: transparent;
+      background-color: $white;
       display: none;
       width: 150px;
     }

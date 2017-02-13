@@ -8,9 +8,9 @@
 
 a.tag {
   color: $light-font-color;
-  background-color: #fff;
+  background-color: rgba(225, 234, 233, .22);
   padding: 0.5em 0.7em;
-  border: 1px solid $light-border-color;
+  border: 0.5px solid rgba(59, 163, 163, .38);
   @include border-radius($radius);
   text-decoration: none;
   margin-right: 10px;
