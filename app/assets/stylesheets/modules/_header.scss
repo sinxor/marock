@@ -25,7 +25,7 @@ body {
   background-color: $white !important;
 }
 .navbar-nav > li > a {
-  padding: 5px 9px;
+  padding: 7px 24px;
 }
 
 /** Navbar animation **/
@@ -64,11 +64,12 @@ nav.navbar {
     margin-left: 9px;
     li > a {
       text-decoration: none;
-      font-size: 14px;
+      font-family: 'CaviarBI';
+      font-size: 18px;
       color: $white;
       font-weight: 400;
       &.active {
-        font-size: 20px;
+        font-size: 25px;
       }
     }
   }
@@ -100,6 +101,7 @@ nav.navbar {
   .new-post-button a {
     transition: all .1s;
     color: $light-gray;
+    font-family: 'Caviar';
     font-weight: 600;
     background-color: $white;
   }
