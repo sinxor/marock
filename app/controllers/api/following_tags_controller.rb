@@ -2,6 +2,7 @@ class API::FollowingTagsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @tags = current_user.following_tags
+    @tags = current_user.following_tags.order("RANDOM()")
   end
+
 end

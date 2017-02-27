@@ -9,15 +9,16 @@ class TagList extends React.Component {
 
   renderTags() {
     return this.props.tags.map(tag => {
-      return (
-        <a
-          key={tag.id}
-          className="tag"
-          href={`/tags/${tag.slug}`}>
-          {tag.name}
-        </a>
-      );
-    });
+            return (
+              <a
+                key={tag.id}
+                className="tag"
+                href={`/tags/${tag.slug}`}>
+                {tag.name}
+              </a>
+            );
+      }
+    );
   }
 }
 
