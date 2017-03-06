@@ -127,6 +127,7 @@ nav.navbar {
   a.avatar-wrapper {
     padding: 0;
     display: inline;
+    float:none;
     margin: 3px 15px 0 10px;
   }
   a.avatar-wrapper img.avatar-image {
@@ -189,10 +190,6 @@ nav.navbar {
   #logo {
     width: 128px;
     margin-left: 15px;
-    position: relative;
-    img, span {
-      position: absolute;
-    }
     img {
       top: 5px;
       height: 31px;
@@ -248,4 +245,14 @@ nav.navbar {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) {
 
+}
+
+@media (max-width: 767px){
+  .navbar-nav
+  .open .dropdown-menu {
+      background-color: $white;
+      box-shadow: 0 1px 2px rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.35);
+  }
+
+  
 }

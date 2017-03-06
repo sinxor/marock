@@ -26,8 +26,8 @@ class FollowingTagList extends React.Component {
   }
 
   render () {
-    if (this.state.followingTags.length < 1) {
-      return <h1>None</h1>
+    if (this.state.followingTags.length === 1) {
+      return <h1>You are not following any tags.</h1>
     }
 
     return (
@@ -48,7 +48,3 @@ class FollowingTagList extends React.Component {
 
 
 }
-
-FollowingTagList.propTypes = {
-  followingTags: React.PropTypes.array.isRequired
-};
