@@ -8,7 +8,7 @@ module UsersHelper
           image_tag user.avatar.url, width: size, height: size, alt: user.username, class: 'avatar-image'
         end
       else
-        image_tag 'default.jpeg', width: size, height: size, alt: 'avatar image', class: 'avatar-image'
+        image_tag 'default', width: size, height: size, alt: 'avatar image', class: 'avatar-image'
       end
   end
 end
