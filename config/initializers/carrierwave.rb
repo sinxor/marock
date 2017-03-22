@@ -13,8 +13,8 @@ if Rails.env.production?
       }
 
       config.aws_attributes = {
-                                'Cache-Control'=>"max-age=#{365.day.to_i}",
-                                'Expires'=>'Tue, 29 Dec 2017 23:23:23 GMT'
-                              }
+                   expires: 1.week.from_now.httpdate,
+                   cache_control: 'max-age=604800'
+      }
   end
 end
