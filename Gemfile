@@ -29,7 +29,8 @@ gem 'friendly_id', '~> 5.1'
 
 gem 'carrierwave', '0.10.0'
 gem 'mini_magick', '3.8.0'
-gem 'fog',  '1.38.0'
+#gem 'fog',  '1.38.0'
+gem 'carrierwave-aws'
 gem 'net-ssh'
 
 
