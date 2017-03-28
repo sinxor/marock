@@ -13,7 +13,7 @@ class TagList extends React.Component {
               <a
                 key={tag.id}
                 className="tag"
-                href={`/tags/${tag.slug}`}>
+                href={`/${this.props.lang}/tags/${tag.slug}`}>
                 {tag.name}
               </a>
             );
@@ -24,5 +24,6 @@ class TagList extends React.Component {
 
 TagList.propTypes = {
   tags: React.PropTypes.array.isRequired,
-  className: React.PropTypes.string
+  className: React.PropTypes.string,
+  lang: React.PropTypes.string
 };

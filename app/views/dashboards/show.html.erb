@@ -1,7 +1,7 @@
 <div class="col-md-6 col-md-offset-1 dashboard-main-content">
 
   <% unless @dashboard.top_stories? %>
-    <% if user_signed_in? && current_page?('/') %>
+    <% if user_signed_in? && (current_page?("/#{I18n.locale}") || current_page?("/")) %>
       <div data-animation="fadeInUp-fadeOutDown">
         <%= render 'shared/inline_editor' %>
       </div>
@@ -26,13 +26,13 @@
 <% content_for :sidebar do %>
   <aside class="col-md-4 main-sidebar">
     <h4 class="small-heading border-top">Featured tags</h4>
-    <%= react_component('TagList', { tags: @dashboard.featured_tags }) %>
+    <%= react_component('TagList', { tags: @dashboard.featured_tags, lang: I18n.locale }) %>
 
     <% if user_signed_in? %>
       <div class="flex-container border-top">
         <h4 class="small-heading">Tags you follow</h4><%= react_component('AddTagButton') %>
       </div>
-      <%= react_component('FollowingTagList') %>
+      <%= react_component('FollowingTagList', { loc: I18n.locale}) %>
 
       <%= react_component('FollowSuggestionsContainer') %>
     <% end %>

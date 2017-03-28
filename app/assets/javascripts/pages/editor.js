@@ -99,7 +99,7 @@ var Editor = {
       success: function() { console.log('autosave successful'); }
     });
   }
-  
+
 };
 
 $(document).ready( Editor.init );

@@ -29,14 +29,14 @@
 <% content_for :sidebar do %>
   <aside class="col-md-4 main-sidebar">
     <h4 class="small-heading border-top">Featured tags</h4>
-    <%= react_component('TagList', { tags: @dashboard.featured_tags }) %>
+    <%= react_component('TagList', { tags: @dashboard.featured_tags, lang: I18n.locale }) %>
 
     <% if user_signed_in? %>
       <div class="flex-container border-top">
         <h4 class="small-heading">Tags you follow</h4>
         <%= react_component('AddTagButton') %>
       </div>
-      <%= react_component('FollowingTagList', { followingTags: current_user.following_tags }) %>
+      <%= react_component('FollowingTagList', { loc: I18n.locale}) %>
     <% end %>
 
     <% unless @dashboard.filtered? %>

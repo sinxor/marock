@@ -1,14 +1,14 @@
 <nav data-behavior="animated-navbar" class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid col-md-10 col-md-offset-1">
     <div class="navbar-header">
-      <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
+      <%= link_to locale_root_path, class: "navbar-brand", id: "logo" do %>
           <%= image_tag('logo.png', width: 55) %>
       <% end %>
     </div>
     <ul class="nav navbar-nav filter-links">
       <li>
         <% if user_signed_in? %>
-          <%= nav_link_to "Home", root_path %>
+          <%= nav_link_to I18n.t("Home"), locale_root_path %>
         <% else %>
           <%= nav_link_to "Staff pick", root_path %>
         <% end %>
@@ -36,6 +36,9 @@
           <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
           <li class="sign-in-button"><%= link_to "Sign in / Sign up", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
         <% end %>
+        <%= link_to_unless_current "EN", locale: "en" %>
+        <%= link_to_unless_current "FR", locale: "fr" %>
+
       </ul>
     </div>
 

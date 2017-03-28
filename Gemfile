@@ -53,6 +53,7 @@ gem 'slim'
 #gem 'sidetiq', '~> 0.7.0'
 
 gem 'nokogiri', '~> 1.6'
+gem 'i18n'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

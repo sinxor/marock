@@ -25,6 +25,7 @@ class FollowSuggestionsContainer extends React.Component {
       method: 'GET',
       dataType: 'json',
       success: (data) => {
+        console.log(data);
         const newActives = data.slice(0, 3)
         this.setState({
           activeUsers: newActives,

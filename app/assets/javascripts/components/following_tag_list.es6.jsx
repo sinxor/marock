@@ -33,7 +33,7 @@ class FollowingTagList extends React.Component {
     return (
       <div>
         <a className="refresh-link pull-right" onClick={this.refreshTags.bind(this)}>Refresh</a>
-        <TagList tags={this.state.newSugg} className="following-tag-list" />
+        <TagList tags={this.state.newSugg} lang={this.props.loc} className="following-tag-list" />
       </div>
     );
   }
