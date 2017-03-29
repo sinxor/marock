@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  Home: "Hoooo"
+  Home: "Home"
+  Topstories: "Top Stories"
+  Bookmarks: "Bookmarks"
+  lessthanaminuteread: "less than a minute read"
+  read: "read"

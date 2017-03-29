@@ -2,9 +2,9 @@ module PostsHelper
   def post_length_in_minutes(body)
     min = body.split(" ").size / 250
     if min == 0
-      'less than a minute read'
+      "#{I18n.t("lessthanaminuteread")}"
     else
-      "#{min} min read"
+      "#{min} min #{I18n.t("read")}"
     end
   end
 

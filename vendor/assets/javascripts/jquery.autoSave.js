@@ -12,6 +12,7 @@
             $this.keyup(function() {
                 clearTimeout(timer);
                 var $context = $this.val();
+                console.log($this.val());
                 if(localStorage) {
                     localStorage.setItem("autoSave", $context);
                 }

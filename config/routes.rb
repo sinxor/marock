@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     get "me/stories/public" => "stories#published", as: :stories_published
     get "search" => "search#show", as: :search
     get "search/users" => "search#users", as: :search_users
-    post "posts/create_and_edit" => "posts#create_and_edit", as: :post_create_and_edit
+
 
 
   end
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'users/sessions', :omniauth_callbacks => "users/omniauth_callbacks" }
 
 
-
+  post "posts/create_and_edit" => "posts#create_and_edit", as: :post_create_and_edit
 
 
 
@@ -50,6 +50,7 @@ Rails.application.routes.draw do
     end
 
     get "autocomplete" => "search_autocomplete#index"
+
 
     resources :posts, only: [:create, :update, :destroy]
     resources :users, only: [:show]

@@ -34,7 +34,7 @@
       </div>
       <%= react_component('FollowingTagList', { loc: I18n.locale}) %>
 
-      <%= react_component('FollowSuggestionsContainer') %>
+      <%= react_component('FollowSuggestionsContainer', { loc: I18n.locale}) %>
     <% end %>
 
     <% unless @dashboard.filtered? %>

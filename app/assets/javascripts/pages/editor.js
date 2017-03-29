@@ -53,13 +53,17 @@ var Editor = {
     $('[data-behavior="autosave"]').autoSave(function() {
       $('[data-behavior="editor-message"]').text('Saving...');
       $('#post_all_tags').val(my_taggle.getTagValues());
-      Editor.postAutosave($('.editor-form').attr('action'),
+      
+
+
+      Editor.postAutosave($('.editor-form').attr('action').split($('.editor-form').attr('action').substring(0,3)).pop(),
                    $('input[name="_method"]').val(),
                    $('#post_title').val(),
                    $('#post_body').val(),
                    $('#post_all_tags').val()
                   );
     }, 500);
+
 
     /*** Form submit ***/
     $('[data-behavior="publish-button"]').on('click', function() {

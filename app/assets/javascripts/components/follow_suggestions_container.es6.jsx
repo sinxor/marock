@@ -54,7 +54,7 @@ class FollowSuggestionsContainer extends React.Component {
        return <h5>You are following all users!</h5>
      }
      return this.state.activeUsers.map(user => {
-       return <SuggestionItem key={user.id} {...user} />
+       return <SuggestionItem key={user.id} {...user} lang={this.props.loc} />
      });
   }
 

@@ -1,11 +1,13 @@
 class SearchBar extends React.Component {
   constructor(props) {
     super(props)
+
+
   }
 
   render () {
     return (
-      <form action="/search" acceptCharset="UTF-8" method="get">
+      <form action={this.props.lang+"/search"} acceptCharset="UTF-8" method="get">
         <input name="utf8" type="hidden" value="√" />
         <button name="button" type="submit">
           <i className="fa fa-search"></i>

@@ -7,7 +7,7 @@ class SuggestionItem extends React.Component {
           dangerouslySetInnerHTML={{ __html: this.props.avatar_image_tag }}
         />
         <div>
-          <h5><PopoverLink user_id={this.props.id} url={this.props.urlPath} children={this.props.username} /></h5>
+          <h5><PopoverLink user_id={this.props.id} url={`/${this.props.lang}/users/${this.props.slug}`} children={this.props.username} /></h5>
         </div>
         <div className="button-wrapper">
           <UserFollowButton

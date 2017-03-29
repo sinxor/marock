@@ -45,6 +45,7 @@ class SearchContainer extends React.Component {
     return (
       <div>
         <SearchBar
+          lang ={this.props.loc}
           showDropdown={this.showDropdown}
           hideDropdown={this.hideDropdown}
           term={this.state.term}
