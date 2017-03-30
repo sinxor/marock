@@ -5,7 +5,7 @@ gem 'rails', '4.2.6'
 gem 'puma', '~> 2.15'
 gem 'pg', '~> 0.15'
 gem 'devise', '~> 3.5.3'
-gem 'omniauth-facebook', '~> 3.0'
+gem 'omniauth-facebook', '~> 4.0'
 gem 'omniauth-google-oauth2', '~> 0.3.1'
 gem 'omniauth-twitter', '~> 1.2'
 gem 'react-rails', '~> 1.10'
@@ -15,10 +15,10 @@ gem 'font-awesome-sass', '~> 4.5'
 gem 'uglifier', '>= 1.3.0'
 gem 'autoprefixer-rails', '~> 6.3'
 
-
+gem 'rack-cors', :require => 'rack/cors'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+#gem 'turbolinks'
 
 gem 'coffee-rails', '~> 4.2.1'
 gem 'jquery-rails'

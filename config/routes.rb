@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root "dashboards#show"
   match '/:locale' => 'dashboards#show',:via => [:get], :as => 'locale_root'
+  
 
 
   scope ":locale", locale:/#{I18n.available_locales.join("|")}/ do
