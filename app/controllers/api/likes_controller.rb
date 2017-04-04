@@ -26,7 +26,7 @@ class API::LikesController < ApplicationController
 
     def notify_author
       unless current_user?(@likeable.user)
-        Notification.create(recipient: @likeable.user, actor: current_user, action: "liked your", notifiable: @likeable, is_new: true)
+        Notification.create(recipient: @likeable.user, actor: current_user, action: "likenotif", notifiable: @likeable, is_new: true)
       end
     end
 end

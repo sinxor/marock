@@ -25,3 +25,7 @@ en:
   Bookmarks: "Bookmarks"
   lessthanaminuteread: "less than a minute read"
   read: "read"
+  responsenotif: "responded to your"
+  follownotif: "started following you"
+  alsocommentnotif: "also commented on a"
+  likenotif: "liked your"

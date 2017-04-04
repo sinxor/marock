@@ -161,3 +161,7 @@ fr:
       not_saved:
         one: "1 erreur a empêché ce(tte) %{resource} d'être sauvegardé(e) :"
         other: "%{count} erreurs ont empêché ce(tte) %{resource} d'être sauvegardé(e) :"
+  responsenotif: "a commenté sur votre"
+  follownotif: "vous suit"
+  alsocommentnotif: "a aussi commenté sur"
+  likenotif: "a aimé votre"
