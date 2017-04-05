@@ -11,7 +11,7 @@
     <h3 class="post-title"><%= link_to post.title, post %></h3>
     <% if post.lead %>
       <div class="post-body"><%= truncate(remove_script_tag(post.lead), length: 140, separator: ' ', escape: false) %></div>
-      <%= link_to "Read more", post, class: 'read-more' %>
+      <%= link_to I18n.t("Readmore"), post, class: 'read-more' %>
     <% end %>
   </div>
 
@@ -26,7 +26,12 @@
 
     <div class="response-count pull-right">
       <% if post.responses_count > 0 %>
-        <%= link_to (pluralize(post.responses_count, "response")), post_path(post, anchor: 'responses'), class: 'response-count' %>
+        <% if I18n.locale.to_s == "en" %>
+          <%= link_to (pluralize(post.responses_count, "response")), post_path(post, anchor: 'responses'), class: 'response-count' %>
+        <% end %>
+        <% if I18n.locale.to_s == "fr" %>
+          <%= link_to (pluralize(post.responses_count, "commentaire")), post_path(post, anchor: 'responses'), class: 'response-count' %>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -5,7 +5,8 @@ class NotificationsContainer extends React.Component {
     this.state = {
       newNotificationCount: 0,
       notifications: [],
-      nextPage: null
+      nextPage: null,
+      language: this.props.lang
     };
   }
 
@@ -32,7 +33,7 @@ class NotificationsContainer extends React.Component {
             <span>Notifications</span>
             <a className="pull-right mark-all-as-read"
               onClick={(e) => this.handleMarkAllAsRead(e)}>
-              Mark All as Read
+              {this.rendermark()}
             </a>
           </div>
           <ul
@@ -60,6 +61,14 @@ class NotificationsContainer extends React.Component {
         });
       }
     });
+  }
+  rendermark(){
+    if (this.state.language === 'en') {
+      return ( "Mark all as read" );
+      }
+    if (this.state.language === 'fr') {
+        return ( "Marquer tout comme lu");
+      }
   }
 
   renderNotificationIcon() {

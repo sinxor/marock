@@ -4,6 +4,11 @@ fr:
   Bookmarks: "Signets"
   lessthanaminuteread: "moins d'une minute de lecture"
   read: "de lecture"
+  feattags: "Tags en vedette"
+  tagsyoufollow: "Tags que vous suivez"
+  Readmore: "Lire la suite.."
+  Recommended: "Recommandé par"
+  Recommendedandfeat: "Coup de coeur du staff de Sinzo et recommandé par"
   date:
     abbr_day_names:
     - dim

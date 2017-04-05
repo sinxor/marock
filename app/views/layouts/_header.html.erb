@@ -29,7 +29,7 @@
         <% if user_signed_in? %>
           <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button" %></li>
           <li id="notifications">
-            <%= react_component('NotificationsContainer', {}) %>
+            <%= react_component('NotificationsContainer', { lang: I18n.locale}) %>
           </li>
           <%= render 'layouts/avatar_dropdown' %>
         <% else %>

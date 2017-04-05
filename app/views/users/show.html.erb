@@ -72,7 +72,9 @@
 <% if @recommended_posts.any? %>
   <div class="banner-container" data-animation="fadeInUp-fadeOutDown">
     <div class="posts-wrapper">
-      <h4 class="heading-border-b">Recommended by <%= @user.username %> &#149;
+      <h4 class="heading-border-b">
+        <%= "#{I18n.t("Recommended")}" %>
+        <%= @user.username %> &#149;
         <%= link_to "See all", user_recommended_posts_path(@user) %>
       </h4>
       <div class="flex-container f-wrap">
