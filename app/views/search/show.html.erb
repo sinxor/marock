@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12 large-searchbar">
       <%= form_for :search, url: search_path, method: :get do |f| %>
-        <%= f.search_field :q, value: params[:q], placeholder: 'Search Stories', autofocus: true, autocomplete: 'off', onfocus: "this.value = this.value;" %>
+        <%= f.search_field :q, value: params[:q], placeholder: I18n.t("SearchStories"), autofocus: true, autocomplete: 'off', onfocus: "this.value = this.value;" %>
       <% end %>
     </div>
   </div>
@@ -13,10 +13,10 @@
       <div class="search-filter-links">
         <div class="active filter-link">
           <%= link_to search_path(q: params[:q]) do %>
-            All <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            <%= I18n.t("All") %> <span class="glyphicon glyphicon-chevron-right pull-right"></span>
           <% end %>
         </div>
-        <div class="filter-link"><%= link_to 'People', search_users_path(q: params[:q]) %></div>
+        <div class="filter-link"><%= link_to I18n.t("People"), search_users_path(q: params[:q]) %></div>
       </div>
     </div>
 
@@ -35,7 +35,7 @@
     <aside class="col-md-4" data-animation="fadeInUp-fadeOutDown">
       <% if @tags.any? %>
         <h4 class="small-heading border-top">Tags</h4>
-        <%= react_component('TagList', { tags: @tags }, { prerender: true }) %>
+        <%= react_component('TagList', { tags: @tags, lang: I18n.locale }, { prerender: true }) %>
       <% end %>
       <% if @users.any? %>
         <h4 class="small-heading border-top">People</h4>

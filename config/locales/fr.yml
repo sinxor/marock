@@ -9,6 +9,20 @@ fr:
   Readmore: "Lire la suite.."
   Recommended: "Recommandé par"
   Recommendedandfeat: "Coup de coeur du staff de Sinzo et recommandé par"
+  Writeastory: "Écrire une histoire"
+  Draftsandstories: "Vos petits papiers"
+  Profile: "Profil"
+  Signout: "Déconnexion"
+  Signinup: "Se connecter / Créer un compte"
+  Facebookin: "Connection avec Facebook"
+  Googlein: "Connection avec Google"
+  Twitterin: "Connection avec Twitter"
+  Signinupemail: "Connection/Inscription avec votre email"
+  Publish: "Publier"
+  NewPost: "Nouveau Post"
+  SearchStories: "Recherche..."
+  All: "Tout"
+  People: "Utilisateurs"
   date:
     abbr_day_names:
     - dim

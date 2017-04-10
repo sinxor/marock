@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12 large-searchbar">
       <%= form_for :search, url: search_users_path, method: :get do |f| %>
-        <%= f.search_field :q, value: params[:q], placeholder: 'Search Stories', autofocus: true, autocomplete: 'off', onfocus: "this.value = this.value;" %>
+        <%= f.search_field :q, value: params[:q], placeholder: I18n.t("SearchStories"), autofocus: true, autocomplete: 'off', onfocus: "this.value = this.value;" %>
       <% end %>
     </div>
   </div>
@@ -11,10 +11,10 @@
   <div class="row">
     <div class="col-md-2">
       <div class="search-filter-links">
-        <div class="filter-link"><%= link_to 'All', search_path(q: params[:q]) %></div>
+        <div class="filter-link"><%= link_to I18n.t("All"), search_path(q: params[:q]) %></div>
         <div class="active filter-link">
           <%= link_to search_users_path(q: params[:q]) do %>
-            People <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            <%= I18n.t("People") %> <span class="glyphicon glyphicon-chevron-right pull-right"></span>
           <% end %>
         </div>
       </div>

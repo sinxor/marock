@@ -36,6 +36,8 @@ class FollowSuggestionsContainer extends React.Component {
   }
 
   render () {
+   if ( this.props.loc ===  "en")
+   {
     return (
       <div className="follow-suggestions-container border-top">
         <div className="suggestions-header">
@@ -47,11 +49,26 @@ class FollowSuggestionsContainer extends React.Component {
         </div>
       </div>
     );
+   }
+   if ( this.props.loc ===  "fr")
+   {
+    return (
+      <div className="follow-suggestions-container border-top">
+        <div className="suggestions-header">
+          <h4 className="small-heading">Découvrez d'autres utilisateurs</h4>
+          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>Refresh</a>
+        </div>
+        <div>
+          {this.renderSuggestions()}
+        </div>
+      </div>
+    );
+   }
   }
 
   renderSuggestions() {
      if (this.state.users.length === 0) {
-       return <h5>You are following all users!</h5>
+       return 
      }
      return this.state.activeUsers.map(user => {
        return <SuggestionItem key={user.id} {...user} lang={this.props.loc} />

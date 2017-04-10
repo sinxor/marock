@@ -27,14 +27,14 @@
           <%= react_component('SearchContainer', { loc: I18n.locale}) %>
         </li>
         <% if user_signed_in? %>
-          <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button" %></li>
+          <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button" %></li>
           <li id="notifications">
             <%= react_component('NotificationsContainer', { lang: I18n.locale}) %>
           </li>
           <%= render 'layouts/avatar_dropdown' %>
         <% else %>
-          <li class="new-post-button"><%= link_to "Write a story", new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
-          <li class="sign-in-button"><%= link_to "Sign in / Sign up", new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
+          <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
+          <li class="sign-in-button"><%= link_to I18n.t("Signinup"), new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
         <% end %>
         <%= link_to_unless_current "EN", locale: "en" %>
         <%= link_to_unless_current "FR", locale: "fr" %>
