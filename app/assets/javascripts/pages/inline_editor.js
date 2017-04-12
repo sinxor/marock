@@ -4,10 +4,9 @@ var InlineEditor = {
     if (!$('body.dashboards.show').length > 0) {
       return;
     }
-
     var editor = new MediumEditor('.medium-editable', {
       placeholder: {
-        text: "Tell your Story ..."
+        text: I18n.t("Home")
       }
     });
 

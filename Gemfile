@@ -54,6 +54,7 @@ gem 'slim'
 
 gem 'nokogiri', '~> 1.6'
 gem 'i18n'
+gem 'i18n-js'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

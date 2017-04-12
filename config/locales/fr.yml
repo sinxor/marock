@@ -23,6 +23,8 @@ fr:
   SearchStories: "Recherche..."
   All: "Tout"
   People: "Utilisateurs"
+  post: "publication"
+  response: "commentaire"
   date:
     abbr_day_names:
     - dim

@@ -13,6 +13,7 @@ class NotificationsContainer extends React.Component {
   componentWillMount() {
     this.fetchNotifications();
     // TODO: set timer to poll
+    console.log(I18n.t("Home"));
   }
 
   render () {

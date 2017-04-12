@@ -31,6 +31,8 @@ module Sinzo
     # config.i18n.default_locale = :de
     config.active_job.queue_adapter = :sidekiq
 
+    config.middleware.use I18n::JS::Middleware
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.autoload_paths += %W(#{config.root}/services)
     config.active_record.raise_in_transactional_callbacks = true

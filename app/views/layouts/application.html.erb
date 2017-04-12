@@ -30,4 +30,8 @@
 <script type="text/javascript">
   window.userSignedIn = <%= user_signed_in? %>;
 </script>
+<script type="text/javascript">
+  I18n.defaultLocale = "<%= I18n.default_locale %>";
+  I18n.locale = "<%= I18n.locale %>";
+</script>
 </html>

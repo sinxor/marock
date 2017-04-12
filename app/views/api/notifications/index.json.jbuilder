@@ -5,15 +5,15 @@ json.notifications do |json|
     json.id notification.id
     json.actor notification.actor.username
     json.actor_avatar_img_tag avatar_for(notification.actor, size: 40)
-    json.action I18n.t(notification.action)
+    json.action notification.action
 
 
     json.type notification.notifiable.class.to_s.underscore.humanize.downcase
 
-    json.url case notification.notifiable.class.to_s
-            when "Post" then post_path(notification.notifiable)
-            when "User" then user_path(notification.notifiable)
-            when "Response" then post_path(notification.notifiable.post, anchor: "response_#{notification.notifiable.id}")
+    json.slug case notification.notifiable.class.to_s
+            when "Post" then notification.notifiable.slug
+            when "User" then notification.notifiable.slug
+            when "Response" then notification.notifiable.post.slug
             end
     json.time_ago time_ago_in_words(notification.created_at)
     json.unread notification.read_at.nil?
