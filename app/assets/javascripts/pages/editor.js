@@ -4,10 +4,10 @@ var Editor = {
     if (!$('[data-page="main-editor"]').length > 0) {
       return;
     }
-
+    console.log(I18n.locale);
     var editor = new MediumEditor('.medium-editable', {
       placeholder: {
-        text: "Tell your Story ..."
+        text: "zzzz"
       }
     });
 
@@ -53,7 +53,7 @@ var Editor = {
     $('[data-behavior="autosave"]').autoSave(function() {
       $('[data-behavior="editor-message"]').text('Saving...');
       $('#post_all_tags').val(my_taggle.getTagValues());
-      
+
 
 
       Editor.postAutosave($('.editor-form').attr('action').split($('.editor-form').attr('action').substring(0,3)).pop(),

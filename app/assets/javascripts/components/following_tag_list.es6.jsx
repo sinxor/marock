@@ -26,14 +26,16 @@ class FollowingTagList extends React.Component {
   }
 
   render () {
+    let followmessage = I18n.t("followmessage");
+    let refresh = I18n.t("refresh");
     if (this.state.followingTags.length === 1) {
-      return <h1>You are not following any tags.</h1>
+      return <h1>{followmessage}</h1>
     }
 
     return (
       <div>
-        <a className="refresh-link pull-right" onClick={this.refreshTags.bind(this)}>Refresh</a>
-        <TagList tags={this.state.newSugg} lang={this.props.loc} className="following-tag-list" />
+      <a className="refresh-link pull-right" onClick={this.refreshTags.bind(this)}>{refresh}</a>
+      <TagList tags={this.state.newSugg} lang={this.props.loc} className="following-tag-list" />
       </div>
     );
   }

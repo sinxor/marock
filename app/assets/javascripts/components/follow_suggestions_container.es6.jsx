@@ -36,39 +36,27 @@ class FollowSuggestionsContainer extends React.Component {
   }
 
   render () {
-   if ( this.props.loc ===  "en")
-   {
+    let refresh = I18n.t("refresh");
+    let suggestions = I18n.t("peopletofollow");
     return (
       <div className="follow-suggestions-container border-top">
         <div className="suggestions-header">
-          <h4 className="small-heading">People to follow</h4>
-          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>Refresh</a>
+          <h4 className="small-heading">{suggestions}</h4>
+          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>{refresh}</a>
         </div>
         <div>
           {this.renderSuggestions()}
         </div>
       </div>
     );
-   }
-   if ( this.props.loc ===  "fr")
-   {
-    return (
-      <div className="follow-suggestions-container border-top">
-        <div className="suggestions-header">
-          <h4 className="small-heading">Découvrez d'autres utilisateurs</h4>
-          <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>Refresh</a>
-        </div>
-        <div>
-          {this.renderSuggestions()}
-        </div>
-      </div>
-    );
-   }
+
+
   }
 
   renderSuggestions() {
+     let alldone = I18n.t("alldone");
      if (this.state.users.length === 0) {
-       return 
+       return <h5> {alldone} </h5>
      }
      return this.state.activeUsers.map(user => {
        return <SuggestionItem key={user.id} {...user} lang={this.props.loc} />

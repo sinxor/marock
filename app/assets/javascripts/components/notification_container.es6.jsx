@@ -68,7 +68,7 @@ class NotificationsContainer extends React.Component {
       return ( "Mark all as read" );
       }
     if (this.state.language === 'fr') {
-        return ( "Marquer tout comme lu");
+        return ( "Tout marquer comme lu");
       }
   }
 

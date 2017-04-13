@@ -25,6 +25,19 @@ fr:
   People: "Utilisateurs"
   post: "publication"
   response: "commentaire"
+  Addyourinterest: "Ajoutez vos intérêts"
+  Add: "Ajouter"
+  Edit: "Modifier"
+  Delete: "Supprimer"
+  Relatedstories: "Publications similaires"
+  Responses: "Commentaires"
+  Writearesponse: "Commenter"
+  followmessage: "Vous ne suivez aucun tag"
+  refresh: "Rafraîchir"
+  peopletofollow: "Utilisateurs suggérés"
+  alldone: "Vous êtes abonné à tous les utilisateurs"
+  tellyourstory: "Racontez votre histoire ..."
+  Title: "Titre"
   date:
     abbr_day_names:
     - dim

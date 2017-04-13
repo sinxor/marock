@@ -5,11 +5,13 @@ class AddTagPopover extends React.Component {
   }
 
   render () {
+    let interest = I18n.t("Addyourinterest");
+    let Add = I18n.t("Add");
     return (
       <div className="add-tag-popover top">
         <div className="arrow" />
         <h3 className="popover-title">
-          Add your interest
+          {interest}
         </h3>
         <div className="popover-content">
           <form onSubmit={this.handleAddTag.bind(this)}>
@@ -24,7 +26,7 @@ class AddTagPopover extends React.Component {
                 className="input-group-addon add-button"
                 onClick={this.handleAddTag.bind(this)}
               >
-                Add
+                {Add}
               </span>
             </div>
           </form>

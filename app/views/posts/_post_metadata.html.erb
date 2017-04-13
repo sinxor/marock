@@ -6,7 +6,7 @@
       <small><%= time_ago_in_words(post.created_at) %> ago &#149; <%= post_length_in_minutes(post.body) %></small>
     <% end %>
     <% if I18n.locale.to_s == "fr" %>
-      <small> il y'a <%= time_ago_in_words(post.created_at) %> &#149; <%= post_length_in_minutes(post.body) %></small>
+      <small> il y a <%= time_ago_in_words(post.created_at) %> &#149; <%= post_length_in_minutes(post.body) %></small>
     <% end %>
   </div>
 </div>

@@ -3,7 +3,12 @@
     <%= avatar_for response.user, size: 40 %>
     <div class="post-info">
       <%= link_to response.username, response.user %><br/>
-      <small><%= time_ago_in_words(response.created_at) %> ago</small>
+      <% if I18n.locale.to_s == "en" %>
+        <small><%= time_ago_in_words(response.created_at) %> ago</small>
+      <% end %>
+      <% if I18n.locale.to_s == "fr" %>
+        <small> il y a <%= time_ago_in_words(response.created_at) %></small>
+      <% end %>
     </div>
   </div>
 

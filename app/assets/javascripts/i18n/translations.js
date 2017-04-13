@@ -1,8 +1,12 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
+  "Add": "Add",
+  "Addyourinterest": "Add your interest",
   "All": "All",
   "Bookmarks": "Bookmarks",
+  "Delete": "Delete",
   "Draftsandstories": "Drafts and stories",
+  "Edit": "Edit",
   "Facebookin": "Sign in with Facebook",
   "Googlein": "Sign in with Google",
   "Home": "Home",
@@ -13,12 +17,16 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   "Readmore": "Read more..",
   "Recommended": "Recommended by",
   "Recommendedandfeat": "Featured by Sinzo staff and recommended by",
+  "Relatedstories": "Related stories",
+  "Responses": "Responses",
   "SearchStories": "Search Stories",
   "Signinup": "Sign in/ Sign up",
   "Signinupemail": "Sign in or Sign up with email",
   "Signout": "Sign out",
+  "Title": "Title",
   "Topstories": "Top Stories",
   "Twitterin": "Sign in with Twitter",
+  "Writearesponse": "Write a response",
   "Writeastory": "Write a story",
   "activerecord": {
     "errors": {
@@ -31,6 +39,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       }
     }
   },
+  "alldone": "You are following all users",
   "alsocommentnotif": "also commented on a",
   "date": {
     "abbr_day_names": [
@@ -284,6 +293,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       }
     }
   },
+  "followmessage": "You are not following any tags",
   "follownotif": "started following you",
   "helpers": {
     "select": {
@@ -360,6 +370,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
       }
     }
   },
+  "peopletofollow": "People to follow",
   "post": "post",
   "prompts": {
     "day": "Jour",
@@ -370,6 +381,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     "year": "Année"
   },
   "read": "read",
+  "refresh": "refresh",
   "response": "response",
   "responsenotif": "responded to your",
   "support": {
@@ -380,6 +392,7 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
     }
   },
   "tagsyoufollow": "Tags you follow",
+  "tellyourstory": "Tell your Story ...",
   "time": {
     "am": "am",
     "formats": {
@@ -410,9 +423,13 @@ I18n.translations["en"] = I18n.extend((I18n.translations["en"] || {}), {
   }
 });
 I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
+  "Add": "Ajouter",
+  "Addyourinterest": "Ajoutez vos intérêts",
   "All": "Tout",
   "Bookmarks": "Signets",
+  "Delete": "Supprimer",
   "Draftsandstories": "Vos petits papiers",
+  "Edit": "Modifier",
   "Facebookin": "Connection avec Facebook",
   "Googlein": "Connection avec Google",
   "Home": "Acceuil",
@@ -423,13 +440,18 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
   "Readmore": "Lire la suite..",
   "Recommended": "Recommandé par",
   "Recommendedandfeat": "Coup de coeur du staff de Sinzo et recommandé par",
+  "Relatedstories": "Publications similaires",
+  "Responses": "Commentaires",
   "SearchStories": "Recherche...",
   "Signinup": "Se connecter / Créer un compte",
   "Signinupemail": "Connection/Inscription avec votre email",
   "Signout": "Déconnexion",
+  "Title": "Titre",
   "Topstories": "Meilleurs Articles",
   "Twitterin": "Connection avec Twitter",
+  "Writearesponse": "Commenter",
   "Writeastory": "Écrire une histoire",
+  "alldone": "Vous êtes abonné à tous les utilisateurs",
   "alsocommentnotif": "a aussi commenté sur",
   "date": {
     "abbr_day_names": [
@@ -618,9 +640,11 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
     }
   },
   "feattags": "Tags en vedette",
+  "followmessage": "Vous ne suivez aucun tag",
   "follownotif": "vous suit",
   "lessthanaminuteread": "moins d'une minute de lecture",
   "likenotif": "a aimé votre",
+  "peopletofollow": "Utilisateurs suggérés",
   "post": "publication",
   "prompts": {
     "day": "Jour",
@@ -631,7 +655,9 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
     "year": "Année"
   },
   "read": "de lecture",
+  "refresh": "Rafraîchir",
   "response": "commentaire",
   "responsenotif": "a commenté sur votre",
-  "tagsyoufollow": "Tags que vous suivez"
+  "tagsyoufollow": "Tags que vous suivez",
+  "tellyourstory": "Racontez votre histoire ..."
 });

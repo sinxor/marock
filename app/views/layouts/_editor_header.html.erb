@@ -40,6 +40,8 @@
         </li>
         <%= render 'layouts/avatar_dropdown' %>
       </ul>
+      <%= link_to_unless_current "EN", locale: "en" %>
+      <%= link_to_unless_current "FR", locale: "fr" %>
     </div>
   </div>
 </nav>
