@@ -12,6 +12,14 @@ $editor-padding-left: 60px;
     font-weight: 600;
     width: 100%;
   }
+  .editor-title-ar {
+    font-size: 36px;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    width: 100%;
+    direction: rtl;
+  }
   .medium-editable {
     min-height: 300px;
     outline: none;
@@ -20,6 +28,16 @@ $editor-padding-left: 60px;
     position: relative;
     left: -$editor-padding-left;
     padding-left: $editor-padding-left;
+  }
+  .medium-editable-ar {
+    min-height: 300px;
+    outline: none;
+    @include well-read;
+    line-height: 1.5;
+    position: relative;
+    left: -$editor-padding-left;
+    padding-left: $editor-padding-left;
+    direction: rtl;
   }
   .picture_upload {
     position: absolute;

@@ -1,28 +1,61 @@
-<%= form_for post, html: { multipart: true, class: "editor-form", data: { page: 'main-editor' }, autocomplete: "off" } do |f| %>
+<% if I18n.locale.to_s == "en" %>
+    <%= form_for post, html: { multipart: true, class: "editor-form", data: { page: 'main-editor' }, autocomplete: "off" } do |f| %>
 
-  <label class="picture_upload">
-    <%= f.file_field :picture %>
-    <i class="fa fa-camera"></i>
-  </label>
-  <div class="file-upload-previewer hidden">
-    <img src="" id="image_preview"/>
-  </div>
-  <% if post.picture? %>
-    <div class="existing-img-previewer" id="existing-img-previewer">
-      <%= image_tag post.picture.url(:thumb) %>
-    </div>
-  <% end %>
+      <label class="picture_upload">
+        <%= f.file_field :picture %>
+        <i class="fa fa-camera"></i>
+      </label>
+      <div class="file-upload-previewer hidden">
+        <img src="" id="image_preview"/>
+      </div>
+      <% if post.picture? %>
+        <div class="existing-img-previewer" id="existing-img-previewer">
+          <%= image_tag post.picture.url(:thumb) %>
+        </div>
+      <% end %>
 
-  <div class="form-group">
-    <%= f.text_field :title, class: 'editor-title', placeholder: I18n.t("Title"), autofocus: true, data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
-  </div>
+      <div class="form-group">
+        <%= f.text_field :title, class: 'editor-title', placeholder: I18n.t("Title"), autofocus: true, data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
+      </div>
 
-  <div class="form-group">
-    <%= f.text_area :body, class: 'medium-editable', data: { behavior: "autosave" } %>
-  </div>
+      <div class="form-group">
+        <%= f.text_area :body, class: 'medium-editable', data: { behavior: "autosave" } %>
+      </div>
 
-  <div class="hidden">
-    <%= f.text_field :all_tags %>
-  </div>
+      <div class="hidden">
+        <%= f.text_field :all_tags %>
+      </div>
 
+    <% end %>
+<% end %>
+
+<% if I18n.locale.to_s == "fr" %>
+    <%= form_for post, html: { multipart: true, class: "editor-form", data: { page: 'main-editor-ar' }, autocomplete: "off" } do |f| %>
+
+      <label class="picture_upload">
+        <%= f.file_field :picture %>
+        <i class="fa fa-camera"></i>
+      </label>
+      <div class="file-upload-previewer hidden">
+        <img src="" id="image_preview"/>
+      </div>
+      <% if post.picture? %>
+        <div class="existing-img-previewer" id="existing-img-previewer">
+          <%= image_tag post.picture.url(:thumb) %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.text_field :title, class: 'editor-title-ar', placeholder: I18n.t("Title"), autofocus: true, data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.text_area :body, class: 'medium-editable-ar', data: { behavior: "autosave" } %>
+      </div>
+
+      <div class="hidden">
+        <%= f.text_field :all_tags %>
+      </div>
+
+    <% end %>
 <% end %>

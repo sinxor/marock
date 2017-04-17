@@ -25,14 +25,14 @@ class UserFollowContainer extends React.Component {
     if (this.props.overlayTrigger) {
       return (
         <OverlayTriggerButton
-          text={`<b>${this.props.followingCount}</b> Following`}
+          text={`<b>${this.props.followingCount}</b> ${I18n.t("Following")}`}
           apiEndpoint={`/api/following?user_id=${this.props.followed_id}`}
-          overlayHeading={`${this.props.username} is Following`} />
+          overlayHeading={`${this.props.username} ${I18n.t("Isfollowing")}`} />
       );
     } else {
       return (
         <span className="following-count">
-          <b>{this.props.followingCount}</b> Following
+          <b>{this.props.followingCount}</b> {I18n.t("Following")}
         </span>
       );
     }
@@ -42,14 +42,14 @@ class UserFollowContainer extends React.Component {
     if (this.props.overlayTrigger) {
       return (
         <OverlayTriggerButton
-          text={`<b>${this.state.followerCount}</b> ${this.pluralizeFollower()}`}
+          text={`<b>${this.state.followerCount}</b> ${I18n.t(this.pluralizeFollower())}`}
           apiEndpoint={`/api/followers?user_id=${this.props.followed_id}`}
-          overlayHeading={`${this.props.username} is Followed by`} />
+          overlayHeading={`${this.props.username} ${I18n.t("Isfollowedby")}`} />
       );
     } else {
       return (
         <span className="follower-count">
-          <b>{this.state.followerCount}</b> {this.pluralizeFollower()}
+          <b>{this.state.followerCount}</b> {I18n.t(this.pluralizeFollower())}
         </span>
       );
     }

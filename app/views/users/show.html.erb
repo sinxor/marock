@@ -41,7 +41,7 @@
     <% end %>
 
     <% if user_signed_in? && current_user?(@user) %>
-      <%= link_to "Edit", edit_user_path(@user), class: 'button green-border-button pull-right edit-button' %>
+      <%= link_to I18n.t("Edit"), edit_user_path(@user), class: 'button green-border-button pull-right edit-button' %>
     <% end %>
 
     </div>
@@ -51,7 +51,7 @@
 
 <div class="posts-wrapper" data-animation="fadeInUp-fadeOutDown">
   <div class="flex-container border-top">
-    <h4 class="small-heading">Interests</h4>
+    <h4 class="small-heading"> <%= I18n.t("Interests") %></h4>
     <% if user_signed_in? && current_user?(@user) %>
       <%= react_component('AddTagButton') %>
     <% end %>
@@ -63,7 +63,7 @@
   <% end %>
 
   <% if @latest_posts.any? %>
-    <h4 class="small-heading border-top">latest</h4>
+    <h4 class="small-heading border-top"> <%= I18n.t("Latest") %></h4>
     <%= render @latest_posts %>
   <% end %>
 </div>

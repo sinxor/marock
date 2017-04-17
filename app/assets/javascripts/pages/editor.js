@@ -1,32 +1,55 @@
 var Editor = {
   init: function() {
     /*** Simply return if it's not editor page ***/
-    if (!$('[data-page="main-editor"]').length > 0) {
+    if (!$('[data-page="main-editor"]').length > 0 && !$('[data-page="main-editor-ar"]').length > 0) {
       return;
     }
-    console.log(I18n.locale);
-    var editor = new MediumEditor('.medium-editable', {
-      placeholder: {
-        text: "zzzz"
-      }
-    });
-
-    $('.medium-editable').mediumInsert({
-      editor: editor,
-      addons: {
-        images: {
-          fileUploadOptions: { // TODO: figure out how to upload pictures to AS3
-            url: $('.editor-form').attr('action'),
-            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
-            method: 'PATCH'
-          }
-        },
-        embeds: {
-          oembedProxy: null
+    if ($('[data-page="main-editor"]').length > 0) {
+      var editor = new MediumEditor('.medium-editable', {
+        placeholder: {
+          text: "Tell your Story ..."
         }
-      }
-    });
+      });
 
+      $('.medium-editable').mediumInsert({
+        editor: editor,
+        addons: {
+          images: {
+            fileUploadOptions: { // TODO: figure out how to upload pictures to AS3
+              url: $('.editor-form').attr('action'),
+              acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+              method: 'PATCH'
+            }
+          },
+          embeds: {
+            oembedProxy: null
+          }
+        }
+      });
+    }
+    if ($('[data-page="main-editor-ar"]').length > 0) {
+      var editor = new MediumEditor('.medium-editable-ar', {
+        placeholder: {
+          text: "تيب مبكي نهمه لفضئ"
+        }
+      });
+
+      $('.medium-editable-ar').mediumInsert({
+        editor: editor,
+        addons: {
+          images: {
+            fileUploadOptions: { // TODO: figure out how to upload pictures to AS3
+              url: $('.editor-form').attr('action'),
+              acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+              method: 'PATCH'
+            }
+          },
+          embeds: {
+            oembedProxy: null
+          }
+        }
+      });
+    }
     // preload tags if its edit.
     var tag_string = $('[data-behavior="tags"]').data("tags");
     var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Story', 'Music'];
