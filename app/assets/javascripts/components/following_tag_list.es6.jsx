@@ -28,7 +28,7 @@ class FollowingTagList extends React.Component {
   render () {
     let followmessage = I18n.t("followmessage");
     let refresh = I18n.t("refresh");
-    if (this.state.followingTags.length === 1) {
+    if (this.state.followingTags.length < 1) {
       return <h1>{followmessage}</h1>
     }
 
