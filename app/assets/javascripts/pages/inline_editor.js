@@ -6,7 +6,7 @@ var InlineEditor = {
     }
     var editor = new MediumEditor('.medium-editable', {
       placeholder: {
-        text: I18n.t("Home")
+        text: I18n.t("tellyourstory")
       }
     });
 

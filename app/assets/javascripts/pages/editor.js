@@ -27,7 +27,7 @@ var Editor = {
         }
       });
     }
-    if ($('[data-page="main-editor-ar"]').length > 0) {
+  /*  if ($('[data-page="main-editor-ar"]').length > 0) {
       var editor = new MediumEditor('.medium-editable-ar', {
         placeholder: {
           text: "تيب مبكي نهمه لفضئ"
@@ -49,7 +49,7 @@ var Editor = {
           }
         }
       });
-    }
+    } */
     // preload tags if its edit.
     var tag_string = $('[data-behavior="tags"]').data("tags");
     var tags = tag_string.length > 0 ? tag_string.split(', ') : ['Story', 'Music'];
