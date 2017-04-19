@@ -693,5 +693,5 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
   "response": "commentaire",
   "responsenotif": "a commenté sur votre",
   "tagsyoufollow": "Tags que vous suivez",
-  "tellyourstory": "Racontez votre histoire ..."
+  "tellyourstory": "Exprimez vous ..."
 });
