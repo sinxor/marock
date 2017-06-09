@@ -9,7 +9,7 @@ body {
   padding: 0;
 }
 .navbar-header {
-  padding: 8px 0;
+  padding-top: 8px;
   border-bottom: 1px solid $super-light-gray;
 }
 .navbar-fixed-top {
@@ -25,7 +25,7 @@ body {
   background-color: $white !important;
 }
 .navbar-nav > li > a {
-  padding: 7px 24px;
+  padding: 4px 10px;
 }
 
 /** Navbar animation **/
@@ -65,7 +65,6 @@ nav.navbar {
     li > a {
       text-decoration: none;
       font-family: 'CaviarBI';
-      font-size: 18px;
       color: $white;
       font-weight: 400;
       &.active {
@@ -75,9 +74,22 @@ nav.navbar {
   }
 
   .folding-nav {
-    position: absolute;
-    top: 3px;
-    right: 0;
+    margin-top: 5px;
+    ul li {
+      margin: 0 5px;
+    }
+    .dropdown .btn{
+      color: #333 !important;
+      background-color: #fff;
+      border-color: #ccc;
+      background: #fff;
+      padding: 6px 12px;
+      border-radius: 5px;
+      margin-right: 0px;
+      position: relative;
+      display: inline-block;
+      width: auto;
+    }
   }
   .navbar-right {
     margin: 0;
@@ -114,10 +126,9 @@ nav.navbar {
   }
   .new-post-button,
   .sign-in-button  {
-    margin-top: 5px;
-    margin-right: 10px;
+
     .button {
-      padding: 0.6em 1em 0.7em 1em;
+      padding: 5px;
     }
   }
 
@@ -217,10 +228,9 @@ nav.navbar {
     position: fixed;
   }
   nav.navbar {
-    padding: 5px 0;
+    padding: 0;
     .filter-links {
-      margin-top: 16px;
-      margin-left: 0;
+      
     }
     #logo {
       width: 138px;
@@ -231,13 +241,19 @@ nav.navbar {
     }
   }
 }
+.dashboards > .navbar{
+  padding-bottom: 3px;
+  min-height: initial;
+}
 
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
   nav.navbar {
     #logo {
-      width: 150px;
+      width: auto;
+      height: auto;
+      padding: 0;
     }
   }
 }

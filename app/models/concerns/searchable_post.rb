@@ -28,8 +28,8 @@ module SearchablePost
       __elasticsearch__.search(
         {
           query: {
-            filtered: {
-              query: {
+            bool: {
+              must: {
                 multi_match: {
                   query: term,
                   fields: ['title^10', 'body', 'user.username^5', 'tags.name^5']

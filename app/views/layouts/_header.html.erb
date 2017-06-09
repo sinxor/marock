@@ -1,46 +1,60 @@
 <nav data-behavior="animated-navbar" class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid col-md-10 col-md-offset-1">
-    <div class="navbar-header">
-      <%= link_to locale_root_path, class: "navbar-brand", id: "logo" do %>
-          <%= image_tag('logo.png', width: 55) %>
-      <% end %>
-    </div>
-    <ul class="nav navbar-nav filter-links">
-      <li>
-        <% if user_signed_in? %>
-          <%= nav_link_to I18n.t("Home"), locale_root_path %>
-        <% else %>
-          <%= nav_link_to "Staff pick", locale_root_path %>
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <!-- LOGO -->
+      <div class="navbar-header">
+        <%= link_to locale_root_path, class: "navbar-brand", id: "logo" do %>
+            <%= image_tag('logo.png', class: "img-responsive") %>
         <% end %>
-      </li>
-      <li><%= nav_link_to I18n.t("Topstories"), top_stories_path %></li>
-      <% if user_signed_in? %>
-        <li><%= nav_link_to I18n.t("Bookmarks"), dashboard_bookmarks_path %></li>
-      <% else %>
-        <li><%= nav_link_to I18n.t("Bookmarks"), dashboard_bookmarks_path ,  data: { behavior: 'trigger-overlay' } %></li>
-      <% end %>
-    </ul>
+      </div>
 
-    <div class="folding-nav">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="main-searchbar">
-          <%= react_component('SearchContainer', { loc: I18n.locale}) %>
-        </li>
-        <% if user_signed_in? %>
-          <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button" %></li>
-          <li id="notifications">
-            <%= react_component('NotificationsContainer', { lang: I18n.locale}) %>
+      <!-- MENU -->
+      <div class="navbar-header">
+        <ul class="nav navbar-nav filter-links">
+          <li>
+            <% if user_signed_in? %>
+              <%= nav_link_to I18n.t("Home"), locale_root_path %>
+            <% else %>
+              <%= nav_link_to I18n.t("Staffpick"), locale_root_path %>
+            <% end %>
           </li>
-          <%= render 'layouts/avatar_dropdown' %>
-        <% else %>
-          <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
-          <li class="sign-in-button"><%= link_to I18n.t("Signinup"), new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
-        <% end %>
-        <%= link_to_unless_current "EN", locale: "en" %>
-        <%= link_to_unless_current "FR", locale: "fr" %>
+          <li><%= nav_link_to I18n.t("Topstories"), top_stories_path %></li>
+          <% if user_signed_in? %>
+            <li><%= nav_link_to I18n.t("Bookmarks"), dashboard_bookmarks_path %></li>
+          <% else %>
+            <li><%= nav_link_to I18n.t("Bookmarks"), dashboard_bookmarks_path ,  data: { behavior: 'trigger-overlay' } %></li>
+          <% end %>
+        </ul>
+      </div>
 
-      </ul>
+      <!-- RIGHT MENU -->
+      <div class="folding-nav pull-right">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="main-searchbar">
+            <%= react_component('SearchContainer', { loc: I18n.locale}) %>
+          </li>
+          <% if user_signed_in? %>
+            <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button" %></li>
+            <li id="notifications">
+              <%= react_component('NotificationsContainer', { lang: I18n.locale}) %>
+            </li>
+            <%= render 'layouts/avatar_dropdown' %>
+          <% else %>
+            <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
+            <li class="sign-in-button"><%= link_to I18n.t("Signinup"), new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
+          <% end %>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Langue
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><%= link_to_unless_current "EN", locale: "en" %></li>
+              <li><%= link_to_unless_current "FR", locale: "fr" %></li>
+            </ul>
+          </div>
+        </ul>
+      </div>
     </div>
-
   </div>
 </nav>
