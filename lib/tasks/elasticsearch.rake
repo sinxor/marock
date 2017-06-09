@@ -13,7 +13,7 @@ namespace :elasticsearch do
 
       # Index all records from the DB to Elasticsearch
       if klass == Post
-        klass.import force: true
+        klass.all.published.import force: true
       else
         klass.import force: true
       end
