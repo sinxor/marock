@@ -110,14 +110,14 @@ nav.navbar {
   .new-post-button {
     display: none;
   }
-  .new-post-button a {
+  .new-post-button a, .sign-in-button a {
     transition: all .1s;
     color: $light-gray;
     font-family: 'Caviar';
     font-weight: 600;
     background-color: $white;
   }
-  .new-post-button:hover {
+  .new-post-button:hover, .sign-in-button:hover {
     a {
       color: $greenlight;
       border-color: $border-hover-color;
@@ -132,9 +132,8 @@ nav.navbar {
     }
   }
 
-  .account {
-    
-  }
+
+  .account {}
   a.avatar-wrapper {
     padding: 0;
     display: inline;

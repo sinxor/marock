@@ -41,7 +41,7 @@
             <%= render 'layouts/avatar_dropdown' %>
           <% else %>
             <li class="new-post-button"><%= link_to I18n.t("Writeastory"), new_post_path, class: "button", data: { behavior: 'trigger-overlay' } %></li>
-            <li class="sign-in-button"><%= link_to I18n.t("Signinup"), new_user_session_path, class: 'button green-border-button', data: { behavior: 'trigger-overlay' } %></li>
+            <li class="sign-in-button"><%= link_to I18n.t("Signinup"), new_user_session_path, class: 'button', data: { behavior: 'trigger-overlay' } %></li>
           <% end %>
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
