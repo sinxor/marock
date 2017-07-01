@@ -5,6 +5,8 @@ body.posts.create,
 body.posts.show {
   .navbar {
     border: none;
+    padding-bottom: 3px;
+    min-height: initial;
   }
   .post-metadata {
     padding: 30px 0 15px;

@@ -3,6 +3,7 @@
 
 body {
   padding-top: 0;
+  min-height: 100vh;
 }
 .right-menu{
   
@@ -11,7 +12,7 @@ body {
   padding: 0;
 }
 .navbar-header {
-  padding-top: 8px;
+  /*padding-top: 8px;*/
   border-bottom: 1px solid $super-light-gray;
 }
 .navbar-fixed-top {
@@ -54,6 +55,8 @@ nav.navbar {
   border-color: $super-light-gray;
   &.navbar-default {
     background-color: $greenlight;
+    min-height: initial;
+    padding: 5px 0;
   }
 
   .navbar-brand {
@@ -76,8 +79,8 @@ nav.navbar {
   }
 
   .folding-nav {
-    margin-top: 5px;
-    ul li {
+    /*margin-top: 5px;*/
+    > ul > li, > ul > .dropdown {
       margin: 0 5px;
     }
     .dropdown .btn{
@@ -85,7 +88,7 @@ nav.navbar {
       background-color: #fff;
       border-color: #ccc;
       background: #fff;
-      padding: 6px 12px;
+      padding: 5px;
       border-radius: 5px;
       margin-right: 0px;
       position: relative;
@@ -166,8 +169,8 @@ nav.navbar {
       }
     }
     .nd-main {
-      font-size: 16px;
-      font-weight: 100px;
+      font-size: 14px;
+      font-weight: 100;
       line-height: 1.4;
     }
     .nd-sub {
@@ -183,11 +186,10 @@ nav.navbar {
       z-index: 20;
       border-bottom: 10px solid #fff;
       position: absolute;
-      right: 5px;
+      right: 6px;
       top: -10px;
     }
     .dropdown-arrow-bottom {
-      display:none;
       width: 0;
       height: 0;
       border-left: 12px solid transparent;
@@ -195,7 +197,7 @@ nav.navbar {
       z-index: 10;
       border-bottom: 11px solid rgba(0, 0, 0, 0.11);
       position: absolute;
-      right: 8px;
+      right: 4px;
       top: -11px;
     }
   }

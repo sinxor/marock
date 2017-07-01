@@ -1,3 +1,4 @@
 img.avatar-image {
   @include border-radius($round);
+  border: 1px solid #eee;
 }
