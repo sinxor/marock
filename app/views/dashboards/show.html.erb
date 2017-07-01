@@ -1,4 +1,4 @@
-<div class="col-md-6 col-md-offset-1 dashboard-main-content">
+<div class="col-md-7 dashboard-main-content">
 
 
   <% unless @dashboard.top_stories? %>
@@ -27,7 +27,7 @@
 </div>
 
 <% content_for :sidebar do %>
-  <aside class="col-md-4 main-sidebar">
+  <aside class="col-md-5 main-sidebar">
     <h4 class="small-heading border-top"><%= "#{I18n.t("feattags")}" %></h4>
     <%= react_component('TagList', { tags: @dashboard.featured_tags, lang: I18n.locale }) %>
 
