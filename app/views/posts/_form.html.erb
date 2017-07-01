@@ -15,11 +15,11 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.text_field :title, class: 'editor-title', placeholder: I18n.t("Title"), autofocus: true, data: { behavior: "autosave" }, onfocus: "this.value = this.value;" %>
+        <%= f.text_field :title, class: 'editor-title', placeholder: I18n.t("Title"), autofocus: true, data: { behavior: "autosave" }, onfocus: "this.value = this.value;" ,dir: 'auto'%>
       </div>
 
       <div class="form-group">
-        <%= f.text_area :body, class: 'medium-editable', data: { behavior: "autosave" } %>
+        <%= f.text_area :body, class: 'medium-editable', data: { behavior: "autosave" }, dir: 'auto' %>
       </div>
 
       <div class="hidden">

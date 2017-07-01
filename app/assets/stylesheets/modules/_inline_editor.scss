@@ -1,4 +1,5 @@
 .inline-editor {
+  overflow: hidden;
   background-color: $white;
   padding: 20px;
   margin-bottom: 10px;
@@ -28,6 +29,7 @@
     display: inline-block;
   }
   .editor-form {
+    word-wrap: break-word;
     padding-bottom: 0;
     margin: 0;
     height: 30px; // FIXME

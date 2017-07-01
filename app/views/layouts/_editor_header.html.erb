@@ -1,19 +1,22 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid col-md-10 col-md-offset-1">
-    <div class="navbar-header">
-      <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
-        <%= image_tag('logo.png', width: 55) %>
-      <% end %>
-    </div>
+  <div class="container-fluid">
+    <div class="col-md-12">
+      <!-- LOGO -->
+      <div class="navbar-header">
+        <%= link_to root_path, class: "navbar-brand", id: "logo" do %>
+          <%= image_tag('logo.png', width: 55) %>
+        <% end %>
+      </div>
 
-    <ul class="nav navbar-nav filter-links">
-      <li>
-        <a href="#" data-behavior="editor-message">
-        </a>
-      </li>
-    </ul>
+      <!-- MENUS -->
+      <ul class="nav navbar-nav filter-links">
+        <li>
+          <a href="#" data-behavior="editor-message">
+          </a>
+        </li>
+      </ul>
 
-    <div class="collapse navbar-collapse">
+      <!-- RIGHT MENUS -->
       <ul class="nav navbar-nav navbar-right">
         <li class="publish-button">
           <button class="button green-border-button dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -39,9 +42,17 @@
           <%= react_component('NotificationsContainer', {}) %>
         </li>
         <%= render 'layouts/avatar_dropdown' %>
+        <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="language-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            Langue
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="language-menu">
+            <li><%= link_to_unless_current "EN", locale: "en" %></li>
+            <li><%= link_to_unless_current "FR", locale: "fr" %></li>
+          </ul>
+        </div>
       </ul>
-      <%= link_to_unless_current "EN", locale: "en" %>
-      <%= link_to_unless_current "FR", locale: "fr" %>
     </div>
   </div>
 </nav>

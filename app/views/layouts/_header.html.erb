@@ -44,11 +44,11 @@
             <li class="sign-in-button"><%= link_to I18n.t("Signinup"), new_user_session_path, class: 'button', data: { behavior: 'trigger-overlay' } %></li>
           <% end %>
           <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            <button class="btn btn-default dropdown-toggle" type="button" id="language-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Langue
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <ul class="dropdown-menu" aria-labelledby="language-menu">
               <li><%= link_to_unless_current "EN", locale: "en" %></li>
               <li><%= link_to_unless_current "FR", locale: "fr" %></li>
             </ul>

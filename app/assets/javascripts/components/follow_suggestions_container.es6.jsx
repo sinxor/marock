@@ -39,7 +39,7 @@ class FollowSuggestionsContainer extends React.Component {
     let refresh = I18n.t("refresh");
     let suggestions = I18n.t("peopletofollow");
     return (
-      <div className="follow-suggestions-container border-top">
+      <div className="">
         <div className="suggestions-header">
           <h4 className="small-heading">{suggestions}</h4>
           <a className="refresh-link pull-right" onClick={this.refreshActiveUsers.bind(this)}>{refresh}</a>

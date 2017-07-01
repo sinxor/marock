@@ -21,6 +21,7 @@ $editor-padding-left: 60px;
     direction: rtl;
   }
   .medium-editable {
+    word-wrap: break-word;
     min-height: 300px;
     outline: none;
     @include well-read;

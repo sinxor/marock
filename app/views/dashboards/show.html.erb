@@ -28,20 +28,25 @@
 
 <% content_for :sidebar do %>
   <aside class="col-md-5 main-sidebar">
-    <h4 class="small-heading border-top"><%= "#{I18n.t("feattags")}" %></h4>
-    <%= react_component('TagList', { tags: @dashboard.featured_tags, lang: I18n.locale }) %>
-
-    <% if user_signed_in? %>
-      <div class="flex-container border-top">
-        <h4 class="small-heading"><%= "#{I18n.t("tagsyoufollow")}" %></h4><%= react_component('AddTagButton') %>
+    <div class="sidebar-element">
+      <h4 class="small-heading "><%= "#{I18n.t("feattags")}" %></h4>
+      <%= react_component('TagList', { tags: @dashboard.featured_tags, lang: I18n.locale }) %>
+    </div>
+      <% if user_signed_in? %>
+      <div class="sidebar-element">
+        <div class="flex-container ">
+          <h4 class="small-heading"><%= "#{I18n.t("tagsyoufollow")}" %></h4><%= react_component('AddTagButton') %>
+        </div>
+        <%= react_component('FollowingTagList', { loc: I18n.locale}) %>
       </div>
-      <%= react_component('FollowingTagList', { loc: I18n.locale}) %>
-
-      <%= react_component('FollowSuggestionsContainer', { loc: I18n.locale}) %>
-    <% end %>
+      <div class="sidebar-element">
+        <%= react_component('FollowSuggestionsContainer', { loc: I18n.locale}) %>
+      </div>
+      <% end %>
 
     <% unless @dashboard.filtered? %>
-      <h4 class="small-heading border-top"> <%= I18n.t("Topstories") %> </h4>
+    <div class="sidebar-element">
+      <h4 class="small-heading "> <%= I18n.t("Topstories") %> </h4>
       <div class="sidebar-top-stories">
         <ul>
           <% @dashboard.top_stories.each_with_index do |post, index| %>
@@ -57,6 +62,7 @@
           <% end %>
         </ul>
       </div>
+    </div>
     <% end %>
   </aside>
 <% end %>

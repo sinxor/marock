@@ -12,8 +12,8 @@
       </div>
     <% end %>
 
-    <h3 class="title"><%= @post.title %></h3>
-    <div class="body">
+    <h3 class="title" dir="auto"><%= @post.title %></h3>
+    <div class="body" dir="auto">
       <p><%= remove_script_tag(@post.body).html_safe %></p>
     </div>
 
@@ -34,7 +34,7 @@
     </div>
 
     <div class="author-info">
-      <div clas="author-metadata">
+      <div class="author-metadata">
         <%= avatar_for @post.user, size: 50 %>
         <div class="username-description">
           <h4><%= @post.user.username %></h4>

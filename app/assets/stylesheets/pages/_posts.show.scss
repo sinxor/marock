@@ -59,15 +59,18 @@ body.posts.show {
     border-top: 1px solid $light-border-color;
     border-bottom: 1px solid $light-border-color;
     margin: 2em 0 0;
+    .author-metadata{
+      text-align: center;
+    }
     .avatar-image {
       vertical-align: top;
-      margin-right: 20px;
+      /*margin-right: 20px;*/
     }
     .username-description {
-      display: inline-block;
+      /*display: inline-block;
       min-width: 240px;
       max-width: 300px;
-      margin-right: 20px;
+      margin-right: 20px;*/
       color: $font-black;
       h4 {
         margin-top: 0;
@@ -78,6 +81,7 @@ body.posts.show {
   .edit-delete-button-wrapper {
     padding: 1em 0;
     margin-bottom: 1em;
+    text-align: center;
   }
 
   .related-stories {

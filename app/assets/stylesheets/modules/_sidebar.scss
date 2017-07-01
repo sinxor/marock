@@ -5,7 +5,7 @@ aside.main-sidebar {
   .sidebar-top-stories {
     ul {
       list-style: none;
-      padding: 1em;
+      padding: 0;
     }
     .top-stories-list-item {
       display: flex;
@@ -32,5 +32,11 @@ aside.main-sidebar {
         }
       }
     }
+  }
+  .sidebar-element{
+    background-color: azure;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
   }
 }
